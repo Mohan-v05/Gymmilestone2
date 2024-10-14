@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update MaxFit Gym Member</title>
+    <link rel="stylesheet" href="Addnewmember.css">
+    <link rel="icon" href="../Admin/Adminimg/maxfit.png">
+</head>
+<body>
+    <div class="container">
+        <h1>Update MaxFit Gym Member</h1>
+        <form id="updateMemberForm" action="Admin/MemberManagement.html">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="nic">NIC Number:</label>
+            <input type="text" id="nic" name="nic"><br>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required><br>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required><br>
+
+            <div style="display:flex;">
+                <label for="gender">Gender:</label><br>
+                <input type="radio" id="male" name="gender" value="male" required>
+                <label for="male">Male</label><br>
+                <input type="radio" id="female" name="gender" value="female" required>
+                <label for="female">Female</label><br>
+            </div>
+
+            <label for="training">Type of Training:</label><br>
+            <div id="trainingOptions"></div> <!-- Placeholder for dynamic checkboxes -->
+
+            <label for="subscription">
+                <input type="checkbox" id="subscription" name="subscription"> Annual Subscription: Yes (1000 rupees discount per year)
+            </label><br>
+
+            <label for="fees">Fees:</label>
+            <input type="text" id="fees" name="fees" readonly><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br>
+
+            <button type="submit">Update</button>
+            <button type="button" id="goHome">Go Home</button>
+        </form>
+    </div>
+    <script src="UpdateMember.js"></script>
+</body>
+</html>
