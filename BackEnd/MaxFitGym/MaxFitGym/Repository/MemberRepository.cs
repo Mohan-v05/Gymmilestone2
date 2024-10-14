@@ -1,4 +1,5 @@
-﻿using MaxFitGym.IRepository;
+﻿using MaxFitGym.Entities;
+using MaxFitGym.IRepository;
 using MaxFitGym.Models;
 using MaxFitGym.Models.RequestModel;
 using MaxFitGym.Models.ResponseModel;
@@ -34,7 +35,7 @@ namespace MaxFitGym.Repository
                     {
                         MemberList.Add(new MemberResponseDTO()
                         {
-                            Id = reader.GetString(0),
+                            Id = reader.GetInt64(0),
                             Nic = reader.GetString(1),
                             FirstName = reader.GetString(2),
                             LastName = reader.GetString(3),
@@ -57,14 +58,13 @@ namespace MaxFitGym.Repository
 
         }
 
-        public void AddMember(MemberRegisterRequestDTO memberRegister)
+        public MemberResponseDTO AddMember(MemberRegisterRequestDTO memberRegister)
         {
             using (var connection = new SqliteConnection(_connectionString))
             {
                 connection.Open();
                 var command = connection.CreateCommand();
-                command.CommandText = "INSERT INTO MembersDetails values(@id,@nic,@firstname,@lastname,@password,@dob,@contactnumber,@email,@age,@gender,@height,@weight,@creationDate,@memberstatus)";
-                command.Parameters.AddWithValue("@id", memberRegister.Id);
+                command.CommandText = "INSERT INTO MembersDetails values(@nic,@firstname,@lastname,@password,@dob,@contactnumber,@email,@age,@gender,@height,@weight,@creationDate,@memberstatus);select last_insert_rowid()";       
                 command.Parameters.AddWithValue("@nic", memberRegister.Nic);
                 command.Parameters.AddWithValue("@firstname", memberRegister.FirstName);
                 command.Parameters.AddWithValue("@lastname", memberRegister.LastName);
@@ -79,7 +79,21 @@ namespace MaxFitGym.Repository
                 command.Parameters.AddWithValue("@creationDate", memberRegister.CreationDate);
                 command.Parameters.AddWithValue("@memberstatus", memberRegister.MemberStatus);
                 command.ExecuteNonQuery();
-            }
+
+                var id = (long)command.ExecuteScalar();
+
+                MemberResponseDTO memberResponseDTO = new MemberResponseDTO();
+                memberResponseDTO.Id = id;
+                memberResponseDTO.FirstName= memberRegister.FirstName;
+                memberResponseDTO.LastName= memberRegister.LastName;    
+                memberResponseDTO.Nic = memberRegister.Nic;
+
+                return memberResponseDTO;
+
+
+             }
+
+
         }
 
 
@@ -131,7 +145,7 @@ namespace MaxFitGym.Repository
                     {
                         return new MemberResponseDTO()
                         {
-                            Id = reader.GetString(0),
+                            Id = reader.GetInt64(0),
                             Nic = reader.GetString(1),
                             FirstName = reader.GetString(2),
                             LastName = reader.GetString(3),

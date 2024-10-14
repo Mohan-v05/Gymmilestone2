@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\UT01146\\Desktop\\New folder\\BackEnd\\MaxFitGym\\MaxFitGym\\MaxFitGym.csproj": {}
+    "C:\\Users\\UT01146\\Desktop\\New folder (2)\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\MaxFitGym.csproj": {}
   },
   "projects": {
-    "C:\\Users\\UT01146\\Desktop\\New folder\\BackEnd\\MaxFitGym\\MaxFitGym\\MaxFitGym.csproj": {
+    "C:\\Users\\UT01146\\Desktop\\New folder (2)\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\MaxFitGym.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\UT01146\\Desktop\\New folder\\BackEnd\\MaxFitGym\\MaxFitGym\\MaxFitGym.csproj",
+        "projectUniqueName": "C:\\Users\\UT01146\\Desktop\\New folder (2)\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\MaxFitGym.csproj",
         "projectName": "MaxFitGym",
-        "projectPath": "C:\\Users\\UT01146\\Desktop\\New folder\\BackEnd\\MaxFitGym\\MaxFitGym\\MaxFitGym.csproj",
+        "projectPath": "C:\\Users\\UT01146\\Desktop\\New folder (2)\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\MaxFitGym.csproj",
         "packagesPath": "C:\\Users\\UT01146\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\UT01146\\Desktop\\New folder\\BackEnd\\MaxFitGym\\MaxFitGym\\obj\\",
+        "outputPath": "C:\\Users\\UT01146\\Desktop\\New folder (2)\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\UT01146\\AppData\\Roaming\\NuGet\\NuGet.Config",
