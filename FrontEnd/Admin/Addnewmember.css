@@ -27,7 +27,7 @@ label {
     color: white;
 }
 
-input[type="text"], input[type="tel"], select {
+input[type="text"],[type="number"],[type="date"],[type="email"], input[type="tel"], select {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
