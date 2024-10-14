@@ -2,7 +2,7 @@
 {
     public class MemberRegisterRequestDTO
     {
-        public string Id { get; set; }
+    
         public string Nic { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }

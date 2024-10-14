@@ -3,6 +3,7 @@ using MaxFitGym.IRepository;
 using MaxFitGym.Models;
 using Microsoft.Data.Sqlite;
 using SQLitePCL;
+using System;
 
 namespace MaxFitGym.Repository
 {
@@ -15,22 +16,34 @@ namespace MaxFitGym.Repository
             _connectionString = connectionString;
         }
 
-        public ProgramDTO AddProgram(ProgramDTO programDto)
+        public Programs AddProgram(ProgramDTO programDto)
         {
             using (var connection = new SqliteConnection(_connectionString))
             {
                 connection.Open();
                 var command = connection.CreateCommand();
                 command = connection.CreateCommand();
-                command.CommandText = "INSERT INTO Programs (ProgramName,Type,TotalFee) VALUES (@programName,@type,@totalFee); select last_insert_rowid()";
-               
+                command.CommandText = "INSERT INTO Programs (ProgramName,Type,TotalFee) VALUES (@programName,@type,@totalFee);select last_insert_rowid()";
                 command.Parameters.AddWithValue("@programName", programDto.ProgramName);
                 command.Parameters.AddWithValue("@type", programDto.Type);
                 command.Parameters.AddWithValue("@totalFee", programDto.TotalFee);
                 command.ExecuteNonQuery();
+
+
+                // Execute the command and get the last inserted row ID
+                var id = (long)command.ExecuteScalar();
+
+                // Create a new Programs object and set its Id
+                Programs programs = new Programs
+                {
+                    Id = id,
+                    ProgramName = programDto.ProgramName,
+                    type = programDto.Type,
+                    TotalFee = programDto.TotalFee
+                };
+
+                return programs; // return the newly created Programs object
             }
-           
-            return programDto;
         }
          public ICollection<Programs> GetAllPrograms()
         {

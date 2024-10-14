@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UCDkcioIQdQ=",
+  "dgSpecHash": "gpqdkQaEFv4=",
   "success": true,
-  "projectFilePath": "C:\\Users\\UT01146\\Desktop\\New folder\\BackEnd\\MaxFitGym\\MaxFitGym\\MaxFitGym.csproj",
+  "projectFilePath": "C:\\Users\\UT01146\\Desktop\\New folder (2)\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\MaxFitGym.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\UT01146\\.nuget\\packages\\microsoft.data.sqlite\\8.0.8\\microsoft.data.sqlite.8.0.8.nupkg.sha512",
     "C:\\Users\\UT01146\\.nuget\\packages\\microsoft.data.sqlite.core\\8.0.8\\microsoft.data.sqlite.core.8.0.8.nupkg.sha512",

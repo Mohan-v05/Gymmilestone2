@@ -1,7 +1,9 @@
-﻿using MaxFitGym.IRepository;
+﻿using MaxFitGym.Entities;
+using MaxFitGym.IRepository;
 using MaxFitGym.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace MaxFitGym.Controllers
 {
@@ -19,11 +21,12 @@ namespace MaxFitGym.Controllers
 
         //To Add new Program
         [HttpPost("Add-program")]
-        public IActionResult AddProgram(ProgramDTO programDto)
+        public IActionResult AddProgram(ProgramDTO programDTO)
+
         {
             try
             {
-                var programData = _programRepository.AddProgram(programDto);
+                var programData = _programRepository.AddProgram(programDTO);
                 return Ok(programData);
             }
             catch (Exception ex) {
