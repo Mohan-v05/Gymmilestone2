@@ -1,4 +1,4 @@
-//Courses retrive from Local storage
+
 let programs = [];
 
 const GetAllProgramsURL = "http://localhost:3000/allProgramsData";
