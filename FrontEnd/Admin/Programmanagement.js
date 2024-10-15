@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 throw new Error('Network response was not ok');
             }
             programs = await response.json();
-            console.log(programs);
 
             // Render programs in the table
             if (!programTableBody) {
@@ -50,73 +49,74 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     GetAllPrograms();
     
-     // Edit button click event with simple redirection
-     programTableBody.addEventListener('click', function (event) {
+    programTableBody.addEventListener('click', function (event) {
         if (event.target.classList.contains('edit-button')) {
-
+    
             // Get the modal and display
             const modal = document.getElementById("programModal");
             modal.style.display = "block";
-
-            //Get the close buttion and its function
+    
+            // Get the close button and its function
             const closeModalBtn = document.getElementsByClassName("close")[0];
-            console.log(closeModalBtn);
-
+    
             // When the user clicks on <span> (x), close the modal
             closeModalBtn.onclick = function () {
                 modal.style.display = "none";
-            }
-
+            };
+    
             // When the user clicks anywhere outside of the modal, close it
             window.onclick = function (event) {
                 if (event.target === modal) {
                     modal.style.display = "none";
                 }
-            }
-
+            };
+    
             const programId = parseInt(event.target.dataset.id);
-            const program = programs.find(p => p.id === programId); // Replace this with actual program retrieval logic
-
+            const program = programs.find(p => p.id === programId); // Replace with actual program retrieval logic
+    
             if (program) {
                 // Populate the modal's input fields with program details
                 document.getElementById('pname').value = program.programName;
                 document.getElementById('fees').value = program.totalFee;
-
+    
                 // Set the selected type
                 document.querySelector(`input[name="type"][value="${program.type}"]`).checked = true;
             }
-
+    
+            // Ensure the previous event listener is removed to avoid multiple triggers
             let updateBtn = document.getElementById('updateBtn');
-            updateBtn.addEventListener('click', (event) => UpdateProgramFee(event))
-
+            updateBtn.replaceWith(updateBtn.cloneNode(true));  // Replaces button to remove all previous event listeners
+    
+            updateBtn = document.getElementById('updateBtn');  // Get the new update button reference
+            updateBtn.addEventListener('click', (event) => UpdateProgramFee(event, programId));
         }
     });
-
-    //Update Program 
+    
+    // Update Program 
     async function UpdateProgramFee(event, programId) {
         event.preventDefault();
-
+    
         // Get updated inputs
         const name = document.getElementById('pname').value;
         const fee = document.getElementById('fees').value;
         const type = document.querySelector('input[name="type"]:checked').value;
-
+    
         // Prepare the data to send to the server
         const updatedProgramData = {
             id: programId,
-            totalFee: fee,          
+            totalFee: fee,
         };
-
+    
         const updateProgramById_url = "http://localhost:5297/api/Program/Update-Program";
-
+    
         // Update Program
-        await fetch(`${updateProgramById_url}/${programId}`, {
+        await fetch(`${updateProgramById_url}/${updatedProgramData.id}/${updatedProgramData.totalFee}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
-            },body: JSON.stringify(updatedProgramData)
+            },
+            body: JSON.stringify(updatedProgramData)
         })
-        .then(response => response.json())
         .then(data => {
             console.log('Success:', data);
             // Once data is successfully updated, fetch the latest program list and re-render the table
@@ -127,16 +127,16 @@ document.addEventListener('DOMContentLoaded', function () {
         .catch((error) => {
             console.error('Error:', error);
         });
-    };
-
+    }
+    
     document.getElementById('addProgramButton').addEventListener('click', function () {
         window.location.href = 'Addprogram.html';
     });
-
+    
     document.getElementById('goHome').addEventListener('click', function () {
         window.location.href = 'Adminhome.html';
     });
-
+    
 
     // Delete button click event
     programTableBody.addEventListener('click', function (event) {
@@ -150,11 +150,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 try {
 
                     deleteProgramById(programId)
-                    let removerow = document.getElementById(programId)
-                    // console.log(removerow)
-                    // let table = document.getElementById('programTable');
-                    // table.deleteRow(removerow);
-                    // Re-render the table with updated data
+                    let removerow = document.getElementById(programId);
                     alert('Program deleted successfully!');
                     window.location.reload();
 

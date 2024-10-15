@@ -1,32 +1,33 @@
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('registrationForm');
     const subscriptionCheckbox = document.getElementById('subscription');
-    const feesInput = document.getElementById('fees').value = '1000';
+    const initialfeeCheckbox = document.getElementById('initialfee');
+    const feesInput = document.getElementById('fees');
     const trainingOptionsContainer = document.getElementById('trainingOptions');
 
     const allUsersData_apiUrl = "http://localhost:3000/allUsersData";
-    const GetAllProgramsURL = "http://localhost:3000/allProgramsData";
-
+    const viewAllPrograms_url="http://localhost:5297/api/Program/Get-All-Programs";
 
     async function loadPrograms() {
         try {
-            const response = await fetch(GetAllProgramsURL); // Replace with your actual endpoint
+        
+            const response = await fetch(viewAllPrograms_url); // Replace with your actual endpoint
             if (!response.ok) {
                 throw new Error('Failed to fetch programs');
             }
             const programs = await response.json();
             trainingOptionsContainer.innerHTML = ''; // Clear existing options
-
+            console.log(programs);
             programs.forEach(program => {
                 const checkbox = document.createElement('input');
                 checkbox.type = 'checkbox';
-                checkbox.id = `program_${program.programId}`;
+                checkbox.id = `program_${program.id}`;
                 checkbox.name = 'training';
-                checkbox.value = program.name; // Use program name for value
+                checkbox.value = program.programName; // Use program name for value
                 
                 const label = document.createElement('label');
                 label.htmlFor = checkbox.id;
-                label.textContent = `${program.name} - ${program.fee} rupees (${program.type})`;
+                label.textContent = `${program.programName} - ${program.totalFee} rupees (${program.type})`;
 
                 trainingOptionsContainer.appendChild(checkbox);
                 trainingOptionsContainer.appendChild(label);
@@ -44,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function calculateFees() {
         let totalFees = 0;
-        console.log(totalFees);
+
         
         const selectedTrainings = document.querySelectorAll('input[name="training"]:checked');
         const subscriptionDiscount = subscriptionCheckbox.checked ? 2000 : 0;
@@ -65,6 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     loadPrograms();
+   
 
     subscriptionCheckbox.addEventListener('change', calculateFees);
 

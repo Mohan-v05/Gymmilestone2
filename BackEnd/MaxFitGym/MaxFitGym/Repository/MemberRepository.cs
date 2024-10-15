@@ -48,7 +48,7 @@ namespace MaxFitGym.Repository
                             Height = reader.GetInt32(10),
                             Weight = reader.GetInt32(11),
                             CreationDate = reader.GetDateTime(12),
-                            MemberStatus = reader.GetBoolean(13)
+                            is_initalfeePaid = reader.GetBoolean(13)
                         });
                     }
                 }
@@ -64,7 +64,7 @@ namespace MaxFitGym.Repository
             {
                 connection.Open();
                 var command = connection.CreateCommand();
-                command.CommandText = "INSERT INTO MembersDetails values(@nic,@firstname,@lastname,@password,@dob,@contactnumber,@email,@age,@gender,@height,@weight,@creationDate,@memberstatus);select last_insert_rowid()";       
+                command.CommandText = "INSERT INTO MembersDetails values(@nic,@firstname,@lastname,@password,@dob,@contactnumber,@email,@age,@gender,@height,@weight,@creationDate,@isinitialamountpaid);select last_insert_rowid()";       
                 command.Parameters.AddWithValue("@nic", memberRegister.Nic);
                 command.Parameters.AddWithValue("@firstname", memberRegister.FirstName);
                 command.Parameters.AddWithValue("@lastname", memberRegister.LastName);
@@ -77,7 +77,7 @@ namespace MaxFitGym.Repository
                 command.Parameters.AddWithValue("@height", memberRegister.Height);
                 command.Parameters.AddWithValue("@weight", memberRegister.Weight);
                 command.Parameters.AddWithValue("@creationDate", memberRegister.CreationDate);
-                command.Parameters.AddWithValue("@memberstatus", memberRegister.MemberStatus);
+                command.Parameters.AddWithValue("@isinitialamountpaid", memberRegister.is_initalfeePaid);
               
 
                 var id = (long)command.ExecuteScalar();
@@ -157,7 +157,7 @@ namespace MaxFitGym.Repository
                             Height=reader.GetInt32(10),
                             Weight=reader.GetInt32(11),
                             CreationDate =reader.GetDateTime(12),
-                            MemberStatus=reader.GetBoolean(13),
+                            is_initalfeePaid=reader.GetBoolean(13),
 
                         };
                     }
