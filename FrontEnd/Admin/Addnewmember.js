@@ -4,74 +4,64 @@ document.addEventListener('DOMContentLoaded', function() {
     const feesInput = document.getElementById('fees');
     const trainingOptionsContainer = document.getElementById('trainingOptions');
 
-    const addMember_url = "http://localhost:5297/api/Member/Add-Member";
-    const getAllMember_url = "http://localhost:5297/api/Member/Get-All-Members";
-    
+    const allUsersData_apiUrl = "http://localhost:3000/allUsersData";
+    const GetAllProgramsURL = "http://localhost:3000/allProgramsData";
 
-    const viewAllPrograms_url="http://localhost:5297/api/Program/Get-All-Programs";
-
-
-    let programs = []; // Declare programs in the outer scope
 
     async function loadPrograms() {
         try {
-            const response = await fetch(viewAllPrograms_url);
+            const response = await fetch(GetAllProgramsURL); // Replace with your actual endpoint
             if (!response.ok) {
                 throw new Error('Failed to fetch programs');
             }
-            programs = await response.json(); // Store the fetched programs
-    
+            const programs = await response.json();
             trainingOptionsContainer.innerHTML = ''; // Clear existing options
-    
+
             programs.forEach(program => {
                 const checkbox = document.createElement('input');
                 checkbox.type = 'checkbox';
                 checkbox.id = `program_${program.programId}`;
                 checkbox.name = 'training';
-                checkbox.value = program.name;
-    
+                checkbox.value = program.name; // Use program name for value
+                
                 const label = document.createElement('label');
                 label.htmlFor = checkbox.id;
-                label.textContent = `${program.programName} - ${program.totalFee} rupees (${program.type})`;
-    
+                label.textContent = `${program.name} - ${program.fee} rupees (${program.type})`;
+
                 trainingOptionsContainer.appendChild(checkbox);
                 trainingOptionsContainer.appendChild(label);
                 trainingOptionsContainer.appendChild(document.createElement('br'));
             });
-    
-            // Add change listeners after programs are loaded
+
             document.querySelectorAll('input[name="training"]').forEach(checkbox => {
-                checkbox.addEventListener('change', calculateFees); // Pass the function reference
+                checkbox.addEventListener('change', calculateFees);
             });
-    
         } catch (error) {
             console.error('Error loading programs:', error);
         }
     }
-    
+
     function calculateFees() {
         let totalFees = 0;
-    
+        
         const selectedTrainings = document.querySelectorAll('input[name="training"]:checked');
-        const subscriptionCheckbox = document.querySelector('#subscriptionCheckbox'); // Adjust the selector as needed
         const subscriptionDiscount = subscriptionCheckbox.checked ? 1000 : 0;
-        console.log(subscriptionCheckbox);
-        console.log(selectedTrainings)
-    
+
         selectedTrainings.forEach(checkbox => {
             const programName = checkbox.value;
-            const program = programs.find(p => p.name === programName); // Use the correct property for comparison
+            const program = programs.find(p => p.name === programName); // Use the fetched programs data
             if (program) {
-                totalFees += parseInt(program.totalFee, 10);
+                totalFees += parseInt(program.fee, 10);
             }
         });
-    
+
         if (subscriptionCheckbox.checked) {
             totalFees = totalFees * 12 - subscriptionDiscount;
         }
-    
+        
         feesInput.value = totalFees + ' rupees';
     }
+
     loadPrograms();
 
     subscriptionCheckbox.addEventListener('change', calculateFees);
@@ -79,17 +69,11 @@ document.addEventListener('DOMContentLoaded', function() {
     form.addEventListener('submit', async function(event) {
         event.preventDefault();
 
-        const firstname = document.getElementById('fname').value;
-        const lastname = document.getElementById('lname').value;
+        const name = document.getElementById('name').value;
         const nic = document.getElementById('nic').value;
-        const dateofbirth = document.getElementById('dob').value;
-        const gender = document.querySelector('input[name="gender"]:checked').value;
-        const age = document.getElementById('age').value;
         const phone = document.getElementById('phone').value;
-        const email = document.getElementById('email').value;
         const address = document.getElementById('address').value;
-        const height = document.getElementById('height').value;
-        const weight = document.getElementById('weight').value;
+        const gender = document.querySelector('input[name="gender"]:checked').value;
         const training = Array.from(document.querySelectorAll('input[name="training"]:checked')).map(cb => cb.value);
         const subscription = subscriptionCheckbox.checked;
         const fees = feesInput.value;
@@ -103,30 +87,23 @@ document.addEventListener('DOMContentLoaded', function() {
         const annualFees = subscription ? (totalMonthlyFees * 12 - 1000) : null;
 
         const memberData = {
-            Id: await generateGymId(), // Generate a unique gym ID via API
-            FirstName: firstname,
-            LastName: lastname,
-            Nic: nic,
-            DOB:dateofbirth,
-            Gender: gender,
-            Age:age,
-            ContactNumber: phone,
-            Email:email,
+            gymId: await generateGymId(), // Generate a unique gym ID via API
+            name: name,
+            nic: nic,
+            phone: phone,
             address: address,
-            Height:height,
-            Weight:weight,
-            // training: training,
-            //subscription: subscription,
-            //fees: fees,
+            gender: gender,
+            training: training,
+            subscription: subscription,
+            fees: fees,
             password: password,
-            CreationDate: Date.now(),
-            // annualFees: annualFees,
-            // monthlyFees: subscription ? null : totalMonthlyFees
-            MemberStatus:true, 
+            date: Date.now(),
+            annualFees: annualFees,
+            monthlyFees: subscription ? null : totalMonthlyFees
         };
 
         try {
-            const response = await fetch(addMember_url, { // Replace with your actual endpoint
+            const response = await fetch('YOUR_API_ENDPOINT_FOR_REGISTRATION', { // Replace with your actual endpoint
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -157,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
     async function generateGymId() {
         try {
             // Fetch the last used gym ID from the API
-            const response = await fetch(addMember_url); // Replace with your actual API endpoint
+            const response = await fetch(allUsersData_apiUrl); // Replace with your actual API endpoint
             if (!response.ok) {
                 throw new Error(`Failed to fetch the last gym ID. Status: ${response.status}`);
             }

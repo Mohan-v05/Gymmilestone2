@@ -78,15 +78,11 @@ namespace MaxFitGym.Controllers
 
         public IActionResult DeleteProgram(int ProgramId)
         {
-            try
-            {
+          
                 _programRepository.DeleteProgram(ProgramId);
                 return Ok("Program Deleted Successfully.");
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            
+           
         }
 
     }

@@ -27,8 +27,7 @@ namespace MaxFitGym.Repository
                 command.Parameters.AddWithValue("@programName", programDto.ProgramName);
                 command.Parameters.AddWithValue("@type", programDto.Type);
                 command.Parameters.AddWithValue("@totalFee", programDto.TotalFee);
-                command.ExecuteNonQuery();
-
+              
 
                 // Execute the command and get the last inserted row ID
                 var id = (long)command.ExecuteScalar();
@@ -77,7 +76,7 @@ namespace MaxFitGym.Repository
             {
                 connection.Open();
                 var command = connection.CreateCommand();
-                command.CommandText = "SELECT * FROM Programs WHERE Id == @id";
+                command.CommandText = "SELECT rowid,ProgramName,Type,TotalFee FROM Programs WHERE rowid == @id";
                 command.Parameters.AddWithValue("@id", ProgramId);
                 using (var reader = command.ExecuteReader())
                 {
@@ -132,7 +131,7 @@ namespace MaxFitGym.Repository
                 {
                     connection.Open();
                     var command = connection.CreateCommand();
-                    command.CommandText = "DELETE FROM Programs WHERE Id = @id";
+                    command.CommandText = "DELETE FROM Programs WHERE rowid = @id";
                     command.Parameters.AddWithValue("@id", ProgramId);
                     command.ExecuteNonQuery();
                 }

@@ -1,5 +1,8 @@
 const addProgram_url = "http://localhost:5297/api/Program/Add-program";
 const viewAllPrograms_url="http://localhost:5297/api/Program/Get-All-Programs"
+const viewProgramById_url = "${http://localhost:5297/api/Program/Get-Progr-By-ID}/${programId}";
+const deleteProgramById_url = "${http://localhost:5297/api/Program/Update-Program}/${programId}";
+const updateProgramById_url = "http://localhost:5297/api/Program/Delete-Program/${programId}";
 
 document.getElementById('programregistrationForm').addEventListener('submit', async function (event) {
     event.preventDefault();
@@ -18,7 +21,7 @@ document.getElementById('programregistrationForm').addEventListener('submit', as
         totalFee: fee  
       }
     ;
-    console.log(programData)
+
 
     try {
         const response = await fetch(addProgram_url, { // Updated to POST to the correct API route
@@ -34,7 +37,7 @@ document.getElementById('programregistrationForm').addEventListener('submit', as
         }
 
         const result = await response.json().then(data => console.log(data));
-        alert('Registration successful! Your Program ID is ' + programId);
+        alert('Registration successful! Your Program ID is ' );
 
     } catch (error) {
         console.error('There was a problem with the fetch operation:', error);
