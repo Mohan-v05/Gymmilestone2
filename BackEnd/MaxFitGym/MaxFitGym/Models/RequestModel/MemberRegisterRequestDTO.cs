@@ -15,6 +15,8 @@
         public int Height { get; set; }
         public int Weight { get; set; }
         public DateTime CreationDate { get; set; }
-        public bool MemberStatus { get; set; }
+        public bool is_initalfeePaid { get; set; }
+        public string Membershiptype { get; set; }
+        public decimal fee { get; set; }
     }
 }

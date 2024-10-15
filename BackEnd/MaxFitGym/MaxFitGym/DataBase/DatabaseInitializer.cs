@@ -41,7 +41,8 @@ namespace MaxFitGym.DataBase
                         Height INT NOT NULL,
                         Weight INT NOT NULL,
                         CreationDate DATE NOT NULL,
-                        MemberStatus BOOLEAN NOT NULL
+                        is_initalfeePaid  BOOLEAN NOT NULL
+
                     );
 
                       CREATE TABLE IF NOT EXISTS Enrollment (
@@ -52,6 +53,15 @@ namespace MaxFitGym.DataBase
                       FOREIGN KEY (ProgramId) REFERENCES Program(rowid) ON DELETE CASCADE
                       FOREIGN KEY (MemberId) REFERENCES MembersDetails(rowid) ON DELETE CASCADE
                       );
+                      
+                     CREATE TABLE IF NOT EXISTS Payments (
+                     Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                     MemberId INTEGER NOT NULL,
+                     Amount REAL NOT NULL,
+                     PaymentDate DATETIME DEFAULT CURRENT_TIMESTAMP,
+                     MembershipType NVARCHAR(25) NOT NULL,
+                     FOREIGN KEY (MemberId) REFERENCES MembersDetails(rowid) ON DELETE CASCADE
+                     );
 
 
                 ";

@@ -11,5 +11,7 @@
         public string Gender { get; set; }
         public int Height { get; set; }
         public int Weight { get; set; }
+        public string Membershiptype { get; set; }
+        public decimal fee { get; set; }
     }
 }
