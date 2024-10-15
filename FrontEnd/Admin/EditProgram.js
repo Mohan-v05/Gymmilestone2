@@ -46,35 +46,4 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Edit button click event with Fetch API
-programTableBody.addEventListener('click', function(event) {
-    if (event.target.classList.contains('edit-button')) {
-        const programId = event.target.dataset.id;
 
-        // Define the API endpoint and request options
-        const apiUrl = `https://your-backend-api.com/programs/${programId}`; // Replace with your actual API URL
-
-        // Send fetch request to get program data (could be GET or POST based on your API)
-        fetch(apiUrl, {
-            method: 'GET', // Use 'POST' if the API requires a POST request
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json(); // Assuming the API returns JSON
-        })
-        .then(data => {
-            console.log('Program data fetched:', data);
-            
-            // If the fetch is successful, redirect to EditProgram.html
-            window.location.href = `EditProgram.html?programId=${programId}`; // Pass the programId as a query parameter
-        })
-        .catch(error => {
-            console.error('There was a problem with the fetch operation:', error);
-        });
-    }
-});
