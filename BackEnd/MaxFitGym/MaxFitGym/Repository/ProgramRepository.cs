@@ -99,7 +99,7 @@ namespace MaxFitGym.Repository
             return null;
         }
 
-        public void UpdateProgram(int ProgramID, int TotalFee)
+        public void UpdateProgram(int ProgramID, int TotalFee, string NewProgramName)
         {
 
             if (TotalFee >= 0)
@@ -108,9 +108,10 @@ namespace MaxFitGym.Repository
                 {
                     connection.Open();
                     var command = connection.CreateCommand();
-                    command.CommandText = "UPDATE Programs SET TotalFee = @totalFee  WHERE Id == @id";
+                    command.CommandText = "UPDATE Programs SET TotalFee = @totalFee,ProgramName=@newProgramName  WHERE rowid == @id";
                     command.Parameters.AddWithValue("@id", ProgramID);
                     command.Parameters.AddWithValue("@totalFee", TotalFee);
+                    command.Parameters.AddWithValue("@newProgramName", NewProgramName);
                     command.ExecuteNonQuery();
                 }
             }

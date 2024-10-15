@@ -11,7 +11,7 @@ namespace MaxFitGym.IRepository
 
         Programs GetProgramById(int ProgramId);
 
-        void UpdateProgram(int ProgramID, int TotalFee);
+        void UpdateProgram(int ProgramID, int TotalFee ,string NewName);
 
         void DeleteProgram(int CourseId);
     }

@@ -28,7 +28,7 @@ namespace MaxFitGym.Repository
             {
                 connection.Open();
                 var command = connection.CreateCommand();
-                command.CommandText = "SELECT * FROM MembersDetails";
+                command.CommandText = "SELECT rowid,Nic,FirstName,LastName,Password,DOB,ContactNumber,Email,Age,Gender,Height,Weight,CreationDate,MemberStatus  FROM MembersDetails";
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
@@ -78,7 +78,7 @@ namespace MaxFitGym.Repository
                 command.Parameters.AddWithValue("@weight", memberRegister.Weight);
                 command.Parameters.AddWithValue("@creationDate", memberRegister.CreationDate);
                 command.Parameters.AddWithValue("@memberstatus", memberRegister.MemberStatus);
-                command.ExecuteNonQuery();
+              
 
                 var id = (long)command.ExecuteScalar();
 
@@ -97,26 +97,26 @@ namespace MaxFitGym.Repository
         }
 
 
-        public void DeleteMember(string memberId)
+        public void DeleteMember(int memberId)
         {
             using (var connection = new SqliteConnection(_connectionString))
             {
                 connection.Open();
                 var command = connection.CreateCommand();
-                command.CommandText = "DELETE FROM MembersDetails WHERE Id == @id";
+                command.CommandText = "DELETE FROM MembersDetails WHERE rowid == @id";
                 command.Parameters.AddWithValue("@id", memberId);
                 command.ExecuteNonQuery();
             }
         }
 
 
-        public void UpdateMember(string memberId, MemberUpdateRequestDTO memberUpdate)
+        public void UpdateMember(int memberId, MemberUpdateRequestDTO memberUpdate)
         {
             using (var connection = new SqliteConnection(_connectionString))
             {
                 connection.Open();
                 var command = connection.CreateCommand();
-                command.CommandText = "UPDATE MembersDetails SET FirstName = @firstname , LastName = @lastname , DOB = @dob , ContactNumber = @contactnumber , Email = @email , Age = @age , Gender = @gender , Height = @height , Weight = @weight  WHERE Id == @id ";
+                command.CommandText = "UPDATE MembersDetails SET FirstName = @firstname , LastName = @lastname , DOB = @dob , ContactNumber = @contactnumber , Email = @email , Age = @age , Gender = @gender , Height = @height , Weight = @weight  WHERE rowid == @id ";
                 command.Parameters.AddWithValue("@firstname", memberUpdate.FirstName);
                 command.Parameters.AddWithValue("@lastname", memberUpdate.LastName);
                 command.Parameters.AddWithValue("@dob", memberUpdate.DOB);
@@ -130,14 +130,14 @@ namespace MaxFitGym.Repository
                 command.ExecuteNonQuery();
             }
         }
-        public MemberResponseDTO GetmemberById(string MemberId)
+        public MemberResponseDTO GetmemberById(int MemberId)
 
         {
             using (var connection = new SqliteConnection(_connectionString))
             {
                 connection.Open();
                 var command = connection.CreateCommand();
-                command.CommandText = "SELECT * FROM MembersDetails WHERE Id == @id";
+                command.CommandText = "SELECT rowid,Nic,FirstName,LastName,Password,DOB,ContactNumber,Email,Age,Gender,Height,Weight,CreationDate,MemberStatus FROM MembersDetails WHERE rowid == @id";
                 command.Parameters.AddWithValue("@id", MemberId);
                 using (var reader = command.ExecuteReader())
                 {

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MaxFitGym")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d93a2daa2c6cf9a831cb1e37c71c7a1395f2d72a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4e45dd8c667853f7b720c3e9a3029f11ea947088")]
 [assembly: System.Reflection.AssemblyProductAttribute("MaxFitGym")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MaxFitGym")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
