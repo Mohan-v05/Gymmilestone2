@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,19 +11,27 @@
             width: 100%;
             border-collapse: collapse;
         }
-        table, th, td {
+
+        table,
+        th,
+        td {
             border: 1px solid black;
         }
-        th, td {
+
+        th,
+        td {
             padding: 8px;
             text-align: left;
         }
+
         th {
             background-color: #f2f2f2;
         }
+
         h1 {
             color: #c21807;
         }
+
         .button {
             margin: 5px;
             padding: 10px 15px;
@@ -31,22 +40,72 @@
             color: white;
             cursor: pointer;
         }
+
         .button:hover {
             background-color: #c21807;
         }
-        .edit-button, .delete-button {
+
+        .edit-button,
+        .delete-button {
             margin: 0 5px;
             cursor: pointer;
         }
+
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            /* Could be more or less, depending on screen size */
+        }
+
+        .close {
+            color: #000000;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
     </style>
 </head>
+
 <body>
     <h1>Program Table</h1>
-    
+
     <input type="text" id="searchBox" placeholder="Search by Program ID" />
     <button id="searchButton" class="button">Search</button>
     <button id="addProgramButton" class="button">Add Program</button>
-    
+
     <table id="programTable">
         <thead>
             <tr>
@@ -61,9 +120,36 @@
             <!-- Data will be populated here -->
         </tbody>
     </table>
-    
+
     <button id="goHome" class="button">Go Home</button>
 
     <script src="Programmanagement.js"></script>
 </body>
+
 </html>
+
+<div id="programModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h1>Update Program</h1>
+        <form id="programregistrationForm">
+            <label for="pname">Program Name :</label>
+            <input type="text" id="pname" name="pname" required><br>
+
+            <label for="fees">Fees (per month):</label>
+            <input type="text" id="fees" name="fees"><br>
+
+            <div style="display:flex;">
+                <label for="type">Type :</label><br>
+
+                <input type="radio" id="weight" name="type" value="weight" required>
+                <label for="weight">Weight</label><br>
+                <input type="radio" id="cardio" name="type" value="cardio" required>
+                <label for="cardio">Cardio</label><br>
+            </div>
+
+            <button type="button" id="updateBtn">Update</button>
+            <button type="button" id="goHome">Go Home</button>
+        </form>
+    </div>
+</div>

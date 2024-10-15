@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('registrationForm');
     const subscriptionCheckbox = document.getElementById('subscription');
-    const feesInput = document.getElementById('fees');
+    const feesInput = document.getElementById('fees').value = '1000';
     const trainingOptionsContainer = document.getElementById('trainingOptions');
 
     const allUsersData_apiUrl = "http://localhost:3000/allUsersData";
@@ -41,11 +41,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+
     function calculateFees() {
         let totalFees = 0;
+        console.log(totalFees);
         
         const selectedTrainings = document.querySelectorAll('input[name="training"]:checked');
-        const subscriptionDiscount = subscriptionCheckbox.checked ? 1000 : 0;
+        const subscriptionDiscount = subscriptionCheckbox.checked ? 2000 : 0;
 
         selectedTrainings.forEach(checkbox => {
             const programName = checkbox.value;
@@ -131,26 +133,5 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.href = 'Adminhome.html'; // Update path as needed
     });
     
-    async function generateGymId() {
-        try {
-            // Fetch the last used gym ID from the API
-            const response = await fetch(allUsersData_apiUrl); // Replace with your actual API endpoint
-            if (!response.ok) {
-                throw new Error(`Failed to fetch the last gym ID. Status: ${response.status}`);
-            }
     
-            // Parse the response to get the last gym ID
-            const data = await response.json();
-            const lastId = data.lastGymId || 1000; // Fallback to 1000 if no last ID is provided
-    
-            // Generate the new gym ID by incrementing the last ID
-            const newId = parseInt(lastId, 10) + 1;
-    
-            return newId;
-    
-        } catch (error) {
-            console.error('Error generating new gym ID:', error);
-            return null; // Handle error as appropriate
-        }
-    }
 })
