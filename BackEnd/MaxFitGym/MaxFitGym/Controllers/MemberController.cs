@@ -32,7 +32,7 @@ namespace MaxFitGym.Controllers
 
         // Get member By Id
         [HttpGet("Get-Member-By-ID /{MemberID}")]
-        public IActionResult GetmemberById(string MemberID)
+        public IActionResult GetmemberById(int MemberID)
         {
             try
             {
@@ -57,7 +57,7 @@ namespace MaxFitGym.Controllers
 
 
         [HttpDelete("Delete-Member/{memberId}")]
-        public IActionResult DeleteMembers(string memberId)
+        public IActionResult DeleteMembers(int memberId)
         {
             _memberRepository.DeleteMember(memberId);
             return Ok("Delete Successfully..");
@@ -65,7 +65,7 @@ namespace MaxFitGym.Controllers
 
 
         [HttpPut("Update-Member/{memberId}")]
-        public IActionResult UpdateMember(string memberId, [FromForm]MemberUpdateRequestDTO memberUpdate)
+        public IActionResult UpdateMember(int memberId, [FromForm]MemberUpdateRequestDTO memberUpdate)
         {
             _memberRepository.UpdateMember(memberId, memberUpdate);
             return Ok("Update Successfully..");

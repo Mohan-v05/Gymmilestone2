@@ -47,8 +47,10 @@ namespace MaxFitGym.DataBase
                       CREATE TABLE IF NOT EXISTS Enrollment (
                      
                       ProgramId INT,
+                      MemberId Int,
                       SubscriptionType NVARCHAR(25) NOT NULL,
-                      FOREIGN KEY (ProgramId) REFERENCES Program(Id) ON DELETE CASCADE
+                      FOREIGN KEY (ProgramId) REFERENCES Program(rowid) ON DELETE CASCADE
+                      FOREIGN KEY (MemberId) REFERENCES MembersDetails(rowid) ON DELETE CASCADE
                       );
 
 

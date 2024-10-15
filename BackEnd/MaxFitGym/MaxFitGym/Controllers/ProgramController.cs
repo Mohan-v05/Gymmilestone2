@@ -59,12 +59,12 @@ namespace MaxFitGym.Controllers
         }
 
         // Update Program
-        [HttpPut("Update-Program/{ProgramID}/{TotalFee}")]
-        public IActionResult UpdateProgram(int ProgramID, int TotalFee)
+        [HttpPut("Update-Program/{ProgramID}/{TotalFee}/{NewName}")]
+        public IActionResult UpdateProgram(int ProgramID, int TotalFee, string NewName)
         {
             try
             {
-                _programRepository.UpdateProgram(ProgramID, TotalFee);
+                _programRepository.UpdateProgram(ProgramID, TotalFee, NewName);
                 return Ok("Program Updated Successfully.");
             }
             catch (Exception ex)
