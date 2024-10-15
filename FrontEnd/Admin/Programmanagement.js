@@ -1,21 +1,21 @@
+const addProgram_url = "http://localhost:5297/api/Program/Add-program";
+const viewAllPrograms_url="http://localhost:5297/api/Program/Get-All-Programs"
+const viewProgramById_url = "${http://localhost:5297/api/Program/Get-Progr-By-ID}/${programId}";
+const updateProgramById_url = "${http://localhost:5297/api/Program/Update-Program}/${programId}";
+const deleteProgramById_url = "http://localhost:5297/api/Program/Delete-Program/${programId}";
 
 let programs = [];
-
-const GetAllProgramsURL = "http://localhost:3000/allProgramsData";
-
-const AddNewProgramURL = "http://localhost:3000/allProgramsData";
-const UpdateProgramURL = "http://localhost:3000/allProgramsData";
-const DeleteProgramURL = "http://localhost:3000/allProgramsData";
 
 const programTableBody = document.querySelector('#programTable tbody');
 
 //Fetch Students Data from Database
 async function GetAllPrograms(){
-    fetch(GetAllProgramsURL).then((response) => {
+    fetch(viewAllPrograms_url).then((response) => {
         return response.json();
     }).then((data) => {
         programs = data;
-        renderPrograms();
+        console.log(programs);
+        renderPrograms(programs);
     })
 };
 GetAllPrograms()
@@ -34,18 +34,18 @@ GetAllPrograms()
 // };
 
 // Delete Program From Database
-async function DeleteProgram(programId){
-    // Delete Course
-    await fetch(`${DeleteProgramURL}/${programId}`, {
-        method: "DELETE"
-    });
-};
+// async function DeleteProgram(programId){
+//     // Delete Course
+//     await fetch(`${deleteProgramById_url}`, {
+//         method: "DELETE"
+//     });
+// };
 
 
 // Function to render programs in the table
-async function renderPrograms() {
-    // const allProgramsData = await fetchProgramsData();
-    // console.log(allProgramsData);  
+async function renderPrograms(programs) {
+   // const programs = await response.json();
+    console.log(programs);  
     const programTableBody = document.querySelector('#programTable tbody');
     // Check if tableBody exists
     if (!programTableBody) {
@@ -56,13 +56,13 @@ async function renderPrograms() {
     programs.forEach(program => {
         const row = document.createElement('tr');
         row.innerHTML = `
-            <td>${program.programId}</td>
-            <td>${program.name}</td>
-            <td>${program.fee}</td>
+            <td>${program.id}</td>
+            <td>${program.programName}</td>
+            <td>${program.totalFee}</td>
             <td>${program.type}</td>
             <td>
-                <button class="edit-button" style="background-color: #c9bfaf;" data-id="${program.programId}">Edit</button>
-                <button class="delete-button" style="background-color: #ed7272;" data-id="${program.programId}">Delete</button>
+                <button class="edit-button" style="background-color: #c9bfaf;" data-id="${program.id}">Edit</button>
+                <button class="delete-button" style="background-color: #ed7272;" data-id="${program.id}">Delete</button>
             </td>
         `;
 
@@ -79,20 +79,20 @@ document.getElementById('goHome').addEventListener('click', function() {
     window.location.href = 'Adminhome.html';
 });
 
-   // Edit button click event
-//    programTableBody.addEventListener('click', function(event) {
-//     if (event.target.classList.contains('edit-button')) {
-//         const programId = event.target.dataset.id;
-        // localStorage.setItem('editProgramId', programId); // Store ID for editing
-//         window.location.href = 'EditProgram.html'; // Redirect to edit page
-//     }
-// });
+  // Edit button click event
+   programTableBody.addEventListener('click', function(event) {
+    if (event.target.classList.contains('edit-button')) {
+        const programId = event.target.dataset.id;
+        
+        window.location.href = 'EditProgram.html'; // Redirect to edit page
+    }
+});
 
 // Edit button click event with simple redirection
 programTableBody.addEventListener('click', function(event) {
     if (event.target.classList.contains('edit-button')) {
         const programId = event.target.dataset.id; // Get the program ID from the clicked button
-
+        
         // Redirect to EditProgram.html, passing the programId as a query parameter
         window.location.href = `'EditProgram.html'?programId=${programId}`;
     }
@@ -114,24 +114,33 @@ programTableBody.addEventListener('click', function(event) {
 // Delete button click event
 programTableBody.addEventListener('click', function(event) {
     if (event.target.classList.contains('delete-button')) {
-        const programId = parseInt(event.target.dataset.id); // Get the program ID from the button
+        const programId = parseInt(event.target.dataset.id); 
+        console.log(event.target)
         const confirmed = confirm('Are you sure you want to delete this program?');
 
         if (confirmed) {
-            // Find the index of the program in the array
-            const programIndex = allProgramsData.findIndex(program => program.programId === programId);
-            console.log(allProgramsData)
-            if (programIndex !== -1) {
-                // Remove the program from the array
-                allProgramsData.splice(programIndex, 1);
-
+           
+            try{
+                
+                deleteProgramById(programId)
+                
                 // Re-render the table with updated data
                 renderPrograms();
                 alert('Program deleted successfully!');
-            } else {
+            } catch(error) {
                 alert('Program not found!');
             }
         }
     }
 });
+
+async function deleteProgramById(programId){
+    console.log(programId)
+    let delURl = "http://localhost:5297/api/Program/Delete-Program"
+
+    const response = await fetch(`${delURl}/${programId}`, { method: 'DELETE' });
+                if (response.ok) {
+                    console.log(response)
+                }
+}
 

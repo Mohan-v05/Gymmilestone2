@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\UT01146\\Desktop\\New folder (2)\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\MaxFitGym.csproj": {}
+    "X:\\MileStone2Final\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\MaxFitGym.csproj": {}
   },
   "projects": {
-    "C:\\Users\\UT01146\\Desktop\\New folder (2)\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\MaxFitGym.csproj": {
+    "X:\\MileStone2Final\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\MaxFitGym.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\UT01146\\Desktop\\New folder (2)\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\MaxFitGym.csproj",
+        "projectUniqueName": "X:\\MileStone2Final\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\MaxFitGym.csproj",
         "projectName": "MaxFitGym",
-        "projectPath": "C:\\Users\\UT01146\\Desktop\\New folder (2)\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\MaxFitGym.csproj",
-        "packagesPath": "C:\\Users\\UT01146\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\UT01146\\Desktop\\New folder (2)\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\obj\\",
+        "projectPath": "X:\\MileStone2Final\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\MaxFitGym.csproj",
+        "packagesPath": "C:\\Users\\UT01360\\.nuget\\packages\\",
+        "outputPath": "X:\\MileStone2Final\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\UT01146\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\UT01360\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -48,7 +48,7 @@
           "dependencies": {
             "Microsoft.Data.Sqlite": {
               "target": "Package",
-              "version": "[8.0.8, )"
+              "version": "[8.0.10, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
