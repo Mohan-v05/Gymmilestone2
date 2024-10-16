@@ -5,9 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const feesInput = document.getElementById('fees');
     const trainingOptionsContainer = document.getElementById('trainingOptions');
 
-    const allUsersData_apiUrl = "http://localhost:3000/allUsersData";
-    const viewAllPrograms_url="http://localhost:5297/api/Program/Get-All-Programs";
-
     async function loadPrograms() {
         try {
         
