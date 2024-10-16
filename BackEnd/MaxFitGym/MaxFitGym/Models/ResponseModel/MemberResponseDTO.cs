@@ -16,5 +16,10 @@
         public int Weight { get; set; }
         public DateTime CreationDate { get; set; }
         public bool is_initalfeePaid { get; set; }
+        public string Membershiptype { get; set; }
+        public int fee { get; set; }
+
+
+    
     }
 }

@@ -1,40 +1,67 @@
-document.addEventListener('DOMContentLoaded', function(){
-    document.getElementById('Tlogin-form').addEventListener('submit' , (event)=>{
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('Tlogin-form').addEventListener('submit', async (event) => {
         event.preventDefault();
-        
-        const username = document.getElementById("username-input").value;
+
+
+        var foundUser;
+        // Get username and password from front end
+        var username = document.getElementById("username-input").value;
         const password = document.getElementById("password-input").value;
 
-        console.log("Username:", username);
         console.log("Password:", password);
-        
-        // Retrieve users from local storage
-        const allUsersData = JSON.parse(localStorage.getItem('allUsersData')) || [];
-        console.log("All Users Data:", allUsersData);
 
-        // Find the user with the matching username & password
-        const foundUser = allUsersData.find(user => user.gymId == username && user.password == password);
+        // Convert username to integer
+        username = parseInt(username);
+        console.log("Username:", username);
+        // Assign input to an object
+        const userinfo = {
+            userid: username,
+            pass: password
+        };
 
-        if(foundUser){
-            // Save loggedInUser to sessionStorage
-            sessionStorage.setItem('loggedInUser', username);
-            sessionStorage.setItem('gymId', foundUser.gymId);
+        // Fetch user data from backend
+        const getUserInfo_apiurl = `http://localhost:5297/api/Member/Get-Member-By-ID /${username}`;
+        //const getUserInfo_apiurl = 'http://localhost:5297/api/Member/Get-Member-By-ID /1';
 
-            console.log("Login successful, redirecting...");
+        try {
+            // Pass ID and get member info
+            const response = await fetch(getUserInfo_apiurl, {
+                method: "GET"
+            });
 
-            // Redirect to customer home page
-            window.location.href = "../Trainers/Traineehome.html";
-            document.getElementById('login-message').textContent = "Login Successful.";
-            document.getElementById('login-message').style.color = 'green';
-        } else {
-            console.log("Login failed, incorrect username or password.");
-
-            // Display error message
-            document.getElementById('login-message').textContent = "Wrong username or password.";
-            document.getElementById('login-message').style.color = 'red';
+            if (response.ok) {
+                const data = await response.json(); // Parse the response as JSON
+                foundUser = data;
+                console.log('User Data:', data);
+            } else {
+                console.error('Failed to fetch user data:', response.status);
+            }
+        } catch (error) {
+            console.error('Error fetching data:', error);
         }
 
-        event.target.reset();
+      
+
+        if (foundUser.password==userinfo.pass) {
+            // Save loggedInUser to sessionStorage
+          console.log("Login successful, redirecting...");
+         
+          document.getElementById('login-message').textContent = "Login Successful.";
+          document.getElementById('login-message').style.color = 'green';
+          sessionStorage.setItem('loggedInUser', username);
+          sessionStorage.setItem('userInfo',JSON.stringify(foundUser));
+          console.log(foundUser);
+          window.location.href = "../Trainers/Traineehome.html";
+        }
+
+        else{
+              // Display error message
+              console.log("Login failed, incorrect username or password.");
+              document.getElementById('login-message').textContent = "Wrong username or password.";
+              document.getElementById('login-message').style.color = 'red';
+        }
+
+       event.target.reset();
     });
 });
 

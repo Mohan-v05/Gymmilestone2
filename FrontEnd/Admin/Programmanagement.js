@@ -165,7 +165,8 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log(programId)
         const deleteProgramById_url = "http://localhost:5297/api/Program/Delete-Program";
 
-        const response = await fetch(`${deleteProgramById_url}/${programId}`, { method: 'DELETE' });
+        const response = await fetch(`${deleteProgramById_url}/${programId}`, {
+             method: 'DELETE' });
         if (response.ok) {
             console.log(response)
         }
