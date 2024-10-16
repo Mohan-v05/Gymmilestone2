@@ -17,7 +17,7 @@
         public DateTime CreationDate { get; set; }
         public bool is_initalfeePaid { get; set; }
         public string Membershiptype { get; set; }
-        public decimal fee {  get; set; }
+        public int fee {  get; set; }
 
     }
 }

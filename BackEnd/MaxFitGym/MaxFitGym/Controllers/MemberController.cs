@@ -20,6 +20,15 @@ namespace MaxFitGym.Controllers
             _webHostEnvironment = webHostEnvironment;
         }
 
+        //add new member
+        [HttpPost("Add-Member")]
+        public IActionResult AddMembers([FromForm] MemberRegisterRequestDTO memberRegister)
+        {
+            _memberRepository.AddMember(memberRegister);
+            return Ok(memberRegister);
+        }
+
+
         //Get All Members
         [HttpGet("Get-All-Members")]
         public async Task<IActionResult> GetAllMembers()
@@ -37,6 +46,7 @@ namespace MaxFitGym.Controllers
             try
             {
                 var member = _memberRepository.GetmemberById(MemberID);
+
                 return Ok(member);
             }
             catch (Exception ex)
@@ -44,16 +54,6 @@ namespace MaxFitGym.Controllers
                 return BadRequest(ex.Message);
             }
         }
-
-
-
-        [HttpPost("Add-Member")]
-        public IActionResult AddMembers([FromForm] MemberRegisterRequestDTO memberRegister)
-        {
-            _memberRepository.AddMember(memberRegister);
-            return Ok(memberRegister);
-        }
-
 
 
         [HttpDelete("Delete-Member/{memberId}")]
@@ -64,11 +64,14 @@ namespace MaxFitGym.Controllers
         }
 
 
+
         [HttpPut("Update-Member/{memberId}")]
         public IActionResult UpdateMember(int memberId, [FromForm]MemberUpdateRequestDTO memberUpdate)
         {
             _memberRepository.UpdateMember(memberId, memberUpdate);
             return Ok("Update Successfully..");
         }
+
+
     }
 }

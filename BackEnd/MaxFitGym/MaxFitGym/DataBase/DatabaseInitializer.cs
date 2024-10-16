@@ -22,6 +22,7 @@ namespace MaxFitGym.DataBase
                   
                     CREATE TABLE IF NOT EXISTS  Programs(
                         
+                       
                         ProgramName NVARCHAR(25) NOT NULL,
                         Type NVARCHAR(25) NOT NULL,
                         TotalFee INT NOT NULL
@@ -41,8 +42,9 @@ namespace MaxFitGym.DataBase
                         Height INT NOT NULL,
                         Weight INT NOT NULL,
                         CreationDate DATE NOT NULL,
-                        is_initalfeePaid  BOOLEAN NOT NULL
-
+                        is_initalfeePaid  BOOLEAN NOT NULL,
+                        MembershipType nvarchar(50),
+                        Fees decimal not null
                     );
 
                       CREATE TABLE IF NOT EXISTS Enrollment (

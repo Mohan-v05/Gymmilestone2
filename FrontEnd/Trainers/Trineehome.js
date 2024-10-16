@@ -1,15 +1,19 @@
 //Trainee Profile View
-const allUsersData = JSON.parse(localStorage.getItem("allUsersData"));
-const gymId = JSON.parse(sessionStorage.getItem('gymId'));
-const user = allUsersData.find(s => s.gymId == gymId);
+//const allUsersData = JSON.parse(localStorage.getItem("allUsersData"));
+const allUsersData = JSON.parse(sessionStorage.getItem("allUsersData"));
+const gymId = JSON.parse(sessionStorage.getItem('userInfo'));
+//const user = allUsersData.find(s => s.gymId == gymId);
+const user = JSON.parse(sessionStorage.getItem("userInfo"));
+
+console.log(user)
 
 document.addEventListener("DOMContentLoaded", () => {
    
     if (user) {
         document.getElementById("NIC").value = user.nic;
-        document.getElementById("Name").value = user.name;
+        document.getElementById("Name").value = user.lastName;
         document.getElementById("address").value = user.address;
-        document.getElementById("phonenumber").value = user.phone;
+        document.getElementById("phonenumber").value = user.contactNumber;
         document.getElementById("gender").value = user.gender;
     }
 
