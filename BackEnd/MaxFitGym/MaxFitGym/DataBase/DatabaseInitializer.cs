@@ -21,15 +21,14 @@ namespace MaxFitGym.DataBase
                 command.CommandText = @"
                   
                     CREATE TABLE IF NOT EXISTS  Programs(
-                        
-                       
+                        Id INTEGER PRIMARY KEY AUTOINCREMENT,
                         ProgramName NVARCHAR(25) NOT NULL,
                         Type NVARCHAR(25) NOT NULL,
                         TotalFee INT NOT NULL
                     );   
 
                     CREATE TABLE IF NOT EXISTS MembersDetails(
-                      
+                       Id INTEGER PRIMARY KEY AUTOINCREMENT,
                         Nic NVARCHAR(12) NOT NULL,
                         FirstName NVARCHAR(50) NOT NULL,
                         LastName NVARCHAR(50) NOT NULL,
@@ -48,22 +47,15 @@ namespace MaxFitGym.DataBase
                     );
 
                       CREATE TABLE IF NOT EXISTS Enrollment (
-                     
+                        Id INTEGER PRIMARY KEY AUTOINCREMENT,
                       ProgramId INT,
-                      MemberId Int,
-                      SubscriptionType NVARCHAR(25) NOT NULL,
-                      FOREIGN KEY (ProgramId) REFERENCES Program(rowid) ON DELETE CASCADE
-                      FOREIGN KEY (MemberId) REFERENCES MembersDetails(rowid) ON DELETE CASCADE
+                      MemberId int,
+                      EnrollDate DATE NOT NULL,
+                      FOREIGN KEY (ProgramId) REFERENCES Programs(Id) ON DELETE CASCADE,
+                      FOREIGN KEY (MemberId) REFERENCES MembersDetails(Id) ON DELETE CASCADE
                       );
                       
-                     CREATE TABLE IF NOT EXISTS Payments (
-                     Id INTEGER PRIMARY KEY AUTOINCREMENT,
-                     MemberId INTEGER NOT NULL,
-                     Amount REAL NOT NULL,
-                     PaymentDate DATETIME DEFAULT CURRENT_TIMESTAMP,
-                     MembershipType NVARCHAR(25) NOT NULL,
-                     FOREIGN KEY (MemberId) REFERENCES MembersDetails(rowid) ON DELETE CASCADE
-                     );
+
 
 
                 ";

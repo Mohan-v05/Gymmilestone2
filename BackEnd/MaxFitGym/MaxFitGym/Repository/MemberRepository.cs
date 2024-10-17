@@ -62,15 +62,22 @@ namespace MaxFitGym.Repository
 
         public MemberResponseDTO AddMember(MemberRegisterRequestDTO memberRegister)
         {
+          
             using (var connection = new SqliteConnection(_connectionString))
             {
                 connection.Open();
                 var command = connection.CreateCommand();
-                command.CommandText = "INSERT INTO MembersDetails values(@nic,@firstname,@lastname,@password,@dob,@contactnumber,@email,@age,@gender,@height,@weight,@creationDate,@isinitialamountpaid,@MembershipType,@Fees);select last_insert_rowid()";       
+                command.CommandText = @"
+        INSERT INTO MembersDetails 
+        (Nic, FirstName, LastName, Password, DOB, ContactNumber, Email, Age, Gender, Height, Weight, CreationDate, is_initalfeePaid, MembershipType, Fees) 
+        VALUES 
+        (@nic, @firstname, @lastname, @password, @dob, @contactnumber, @email, @age, @gender, @height, @weight, @creationDate, @isinitialamountpaid, @MembershipType, @Fees) RETURNING Id;
+       ";
+
                 command.Parameters.AddWithValue("@nic", memberRegister.Nic);
                 command.Parameters.AddWithValue("@firstname", memberRegister.FirstName);
                 command.Parameters.AddWithValue("@lastname", memberRegister.LastName);
-                command.Parameters.AddWithValue("@password", memberRegister.password);
+                command.Parameters.AddWithValue("@password", memberRegister.password); // Note the case change here
                 command.Parameters.AddWithValue("@dob", memberRegister.DOB);
                 command.Parameters.AddWithValue("@contactnumber", memberRegister.ContactNumber);
                 command.Parameters.AddWithValue("@email", memberRegister.Email);
@@ -80,22 +87,21 @@ namespace MaxFitGym.Repository
                 command.Parameters.AddWithValue("@weight", memberRegister.Weight);
                 command.Parameters.AddWithValue("@creationDate", memberRegister.CreationDate);
                 command.Parameters.AddWithValue("@isinitialamountpaid", memberRegister.is_initalfeePaid);
-                command.Parameters.AddWithValue("@MembershipType", memberRegister.Membershiptype);
-                command.Parameters.AddWithValue("@Fees", memberRegister.fee);
-              
+                command.Parameters.AddWithValue("@MembershipType", memberRegister.Membershiptype); // Ensure this matches the property name
+                command.Parameters.AddWithValue("@Fees", memberRegister.fee); // Ensure this matches the property name
 
                 var id = (long)command.ExecuteScalar();
 
                 MemberResponseDTO memberResponseDTO = new MemberResponseDTO();
+
+
                 memberResponseDTO.Id = id;
-                memberResponseDTO.FirstName= memberRegister.FirstName;
-                memberResponseDTO.LastName= memberRegister.LastName;    
+                memberResponseDTO.FirstName = memberRegister.FirstName;
+                memberResponseDTO.LastName = memberRegister.LastName;
                 memberResponseDTO.Nic = memberRegister.Nic;
-
                 return memberResponseDTO;
+            }
 
-
-             }
 
 
         }
@@ -107,7 +113,7 @@ namespace MaxFitGym.Repository
             {
                 connection.Open();
                 var command = connection.CreateCommand();
-                command.CommandText = "DELETE FROM MembersDetails WHERE rowid == @id";
+                command.CommandText = "DELETE FROM MembersDetails WHERE Id == @id";
                 command.Parameters.AddWithValue("@id", memberId);
                 command.ExecuteNonQuery();
             }
@@ -120,7 +126,7 @@ namespace MaxFitGym.Repository
             {
                 connection.Open();
                 var command = connection.CreateCommand();
-                command.CommandText = "UPDATE MembersDetails SET FirstName = @firstname , LastName = @lastname , DOB = @dob , ContactNumber = @contactnumber , Email = @email , Age = @age , Gender = @gender , Height = @height , Weight = @weight,MembershipType=@membershiptype ,Fees=@newFees  WHERE rowid == @id ";
+                command.CommandText = "UPDATE MembersDetails SET FirstName = @firstname , LastName = @lastname , DOB = @dob , ContactNumber = @contactnumber , Email = @email , Age = @age , Gender = @gender , Height = @height , Weight = @weight,MembershipType=@membershiptype ,Fees=@newFees  WHERE Id == @id ";
                 command.Parameters.AddWithValue("@firstname", memberUpdate.FirstName);
                 command.Parameters.AddWithValue("@lastname", memberUpdate.LastName);
                 command.Parameters.AddWithValue("@dob", memberUpdate.DOB);
@@ -143,7 +149,7 @@ namespace MaxFitGym.Repository
             {
                 connection.Open();
                 var command = connection.CreateCommand();
-                command.CommandText = "SELECT rowid,Nic,FirstName,LastName,Password,DOB,ContactNumber,Email,Age,Gender,Height,Weight,CreationDate,is_initalfeePaid,MembershipType,Fees FROM MembersDetails WHERE rowid == @id";
+                command.CommandText = "SELECT Id,Nic,FirstName,LastName,Password,DOB,ContactNumber,Email,Age,Gender,Height,Weight,CreationDate,is_initalfeePaid,MembershipType,Fees FROM MembersDetails WHERE Id == @id";
                 command.Parameters.AddWithValue("@id", MemberId);
                 using (var reader = command.ExecuteReader())
                 {
