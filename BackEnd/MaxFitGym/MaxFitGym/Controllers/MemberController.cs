@@ -1,4 +1,5 @@
 ﻿using MaxFitGym.IRepository;
+using MaxFitGym.Models;
 using MaxFitGym.Models.RequestModel;
 using MaxFitGym.Repository;
 using Microsoft.AspNetCore.Http;
@@ -33,7 +34,8 @@ namespace MaxFitGym.Controllers
             {
                 return BadRequest(ex.Message);
             }
-            
+           
+          
         }
 
 
