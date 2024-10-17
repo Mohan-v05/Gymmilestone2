@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
         };
 
         // Fetch user data from backend
-        const getUserInfo_apiurl = `http://localhost:5297/api/Member/Get-Member-By-ID /${username}`;
+        const getUserInfo_apiurl = `http://localhost:5297/api/Member/Get-Member-By-ID/${username}`;
         //const getUserInfo_apiurl = 'http://localhost:5297/api/Member/Get-Member-By-ID /1';
 
         try {

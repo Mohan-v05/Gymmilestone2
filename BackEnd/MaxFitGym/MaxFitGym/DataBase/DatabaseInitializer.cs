@@ -36,6 +36,7 @@ namespace MaxFitGym.DataBase
                         DOB DATE NOT NULL,
                         ContactNumber NVARCHAR(50) NOT NULL,
                         Email NVARCHAR(50) NOT NULL,
+                        Address Nvarchar(100) NOT NULL,
                         Age INT NOT NULL,
                         Gender NVARCHAR(50) NOT NULL,
                         Height INT NOT NULL,

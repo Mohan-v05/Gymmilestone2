@@ -70,7 +70,7 @@ namespace MaxFitGym.Repository
 
         }
 
-        public Programs GetProgramById(int ProgramId)
+        public Programs GetProgramById(Int64 ProgramId)
         {
             using (var connection = new SqliteConnection(_connectionString))
             {
