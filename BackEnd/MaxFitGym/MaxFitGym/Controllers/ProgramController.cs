@@ -43,7 +43,7 @@ namespace MaxFitGym.Controllers
         }
 
         // Get Program By Id
-        [HttpGet("Get-Progr-By-ID /{programId}")]
+        [HttpGet("Get-Progr-By-ID/{programId}")]
 
         public IActionResult GetProgramById(int programId)
         {

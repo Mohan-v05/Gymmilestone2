@@ -22,7 +22,7 @@ namespace MaxFitGym.Controllers
 
         //add new member
         [HttpPost("Add-Member")]
-        public IActionResult AddMembers([FromForm] MemberRegisterRequestDTO memberRegister)
+        public IActionResult AddMembers(MemberRegisterRequestDTO memberRegister)
         {
             try
             {
