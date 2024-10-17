@@ -6,6 +6,7 @@ using MaxFitGym.Models.ResponseModel;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Data.Sqlite;
 using System.Data;
+using System.Net;
 using System.Reflection;
 
 namespace MaxFitGym.Repository
@@ -28,7 +29,7 @@ namespace MaxFitGym.Repository
             {
                 connection.Open();
                 var command = connection.CreateCommand();
-                command.CommandText = "SELECT rowid,Nic,FirstName,LastName,Password,DOB,ContactNumber,Email,Age,Gender,Height,Weight,CreationDate,is_initalfeePaid,MembershipType,Fees  FROM MembersDetails";
+                command.CommandText = "SELECT Id,Nic,FirstName,LastName,Password,DOB,ContactNumber,Email,Address,Age,Gender,Height,Weight,CreationDate,is_initalfeePaid,MembershipType,Fees  FROM MembersDetails";
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
@@ -43,14 +44,15 @@ namespace MaxFitGym.Repository
                             DOB = reader.GetDateTime(5),
                             ContactNumber = reader.GetString(6),
                             Email = reader.GetString(7),
-                            Age = reader.GetInt32(8),
-                            Gender = reader.GetString(9),
-                            Height = reader.GetInt32(10),
-                            Weight = reader.GetInt32(11),
-                            CreationDate = reader.GetDateTime(12),
-                            is_initalfeePaid = reader.GetBoolean(13),
-                            Membershiptype=reader.GetString(14),
-                            fee = reader.GetInt32(15),
+                            Address = reader.GetString(8),
+                            Age = reader.GetInt32(9),
+                            Gender = reader.GetString(10),
+                            Height = reader.GetInt32(11),
+                            Weight = reader.GetInt32(12),
+                            CreationDate = reader.GetDateTime(13),
+                            is_initalfeePaid = reader.GetBoolean(14),
+                            Membershiptype=reader.GetString(15),
+                            fee = reader.GetInt32(16),
                         });
                     }
                 }
@@ -69,9 +71,9 @@ namespace MaxFitGym.Repository
                 var command = connection.CreateCommand();
                 command.CommandText = @"
         INSERT INTO MembersDetails 
-        (Nic, FirstName, LastName, Password, DOB, ContactNumber, Email, Age, Gender, Height, Weight, CreationDate, is_initalfeePaid, MembershipType, Fees) 
+        (Nic, FirstName, LastName, Password, DOB, ContactNumber, Email,Address, Age, Gender, Height, Weight, CreationDate, is_initalfeePaid, MembershipType, Fees) 
         VALUES 
-        (@nic, @firstname, @lastname, @password, @dob, @contactnumber, @email, @age, @gender, @height, @weight, @creationDate, @isinitialamountpaid, @MembershipType, @Fees) RETURNING Id;
+        (@nic, @firstname, @lastname, @password, @dob, @contactnumber, @email,@Address, @age, @gender, @height, @weight, @creationDate, @isinitialamountpaid, @MembershipType, @Fees) RETURNING Id;
        ";
 
                 command.Parameters.AddWithValue("@nic", memberRegister.Nic);
@@ -81,6 +83,7 @@ namespace MaxFitGym.Repository
                 command.Parameters.AddWithValue("@dob", memberRegister.DOB);
                 command.Parameters.AddWithValue("@contactnumber", memberRegister.ContactNumber);
                 command.Parameters.AddWithValue("@email", memberRegister.Email);
+                command.Parameters.AddWithValue("@Address", memberRegister.Address);
                 command.Parameters.AddWithValue("@age", memberRegister.Age);
                 command.Parameters.AddWithValue("@gender", memberRegister.Gender);
                 command.Parameters.AddWithValue("@height", memberRegister.Height);
@@ -126,12 +129,13 @@ namespace MaxFitGym.Repository
             {
                 connection.Open();
                 var command = connection.CreateCommand();
-                command.CommandText = "UPDATE MembersDetails SET FirstName = @firstname , LastName = @lastname , DOB = @dob , ContactNumber = @contactnumber , Email = @email , Age = @age , Gender = @gender , Height = @height , Weight = @weight,MembershipType=@membershiptype ,Fees=@newFees  WHERE Id == @id ";
+                command.CommandText = "UPDATE MembersDetails SET FirstName = @firstname , LastName = @lastname , DOB = @dob , ContactNumber = @contactnumber , Email = @email ,Address=@Address, Age = @age , Gender = @gender , Height = @height , Weight = @weight,MembershipType=@membershiptype ,Fees=@newFees  WHERE Id == @id ";
                 command.Parameters.AddWithValue("@firstname", memberUpdate.FirstName);
                 command.Parameters.AddWithValue("@lastname", memberUpdate.LastName);
                 command.Parameters.AddWithValue("@dob", memberUpdate.DOB);
                 command.Parameters.AddWithValue("@contactnumber", memberUpdate.ContactNumber);
                 command.Parameters.AddWithValue("@email", memberUpdate.Email);
+                command.Parameters.AddWithValue("@Address", memberUpdate.Address);
                 command.Parameters.AddWithValue("@age", memberUpdate.Age);
                 command.Parameters.AddWithValue("@gender", memberUpdate.Gender);
                 command.Parameters.AddWithValue("@height", memberUpdate.Height);
@@ -149,7 +153,7 @@ namespace MaxFitGym.Repository
             {
                 connection.Open();
                 var command = connection.CreateCommand();
-                command.CommandText = "SELECT Id,Nic,FirstName,LastName,Password,DOB,ContactNumber,Email,Age,Gender,Height,Weight,CreationDate,is_initalfeePaid,MembershipType,Fees FROM MembersDetails WHERE Id == @id";
+                command.CommandText = "SELECT Id,Nic,FirstName,LastName,Password,DOB,ContactNumber,Email,Address,Age,Gender,Height,Weight,CreationDate,is_initalfeePaid,MembershipType,Fees FROM MembersDetails WHERE Id == @id";
                 command.Parameters.AddWithValue("@id", MemberId);
                 using (var reader = command.ExecuteReader())
                 {
@@ -165,14 +169,15 @@ namespace MaxFitGym.Repository
                             DOB = reader.GetDateTime(5),
                             ContactNumber = reader.GetString(6),
                             Email = reader.GetString(7),
-                            Age = reader.GetInt32(8),
-                            Gender = reader.GetString(9),
-                            Height = reader.GetInt32(10),
-                            Weight = reader.GetInt32(11),
-                            CreationDate = reader.GetDateTime(12),
-                            is_initalfeePaid = reader.GetBoolean(13),
-                            Membershiptype = reader.GetString(14),
-                            fee = reader.GetInt32(15),
+                            Address = reader.GetString(8),
+                            Age = reader.GetInt32(9),
+                            Gender = reader.GetString(10),
+                            Height = reader.GetInt32(11),
+                            Weight = reader.GetInt32(12),
+                            CreationDate = reader.GetDateTime(13),
+                            is_initalfeePaid = reader.GetBoolean(14),
+                            Membershiptype = reader.GetString(15),
+                            fee = reader.GetInt32(16),
 
                         };
                     }

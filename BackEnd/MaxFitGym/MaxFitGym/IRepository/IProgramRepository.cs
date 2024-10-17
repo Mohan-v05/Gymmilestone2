@@ -9,7 +9,7 @@ namespace MaxFitGym.IRepository
 
         ICollection<Programs> GetAllPrograms();
 
-        Programs GetProgramById(int ProgramId);
+        Programs GetProgramById(Int64 ProgramId);
 
         void UpdateProgram(int ProgramID, int TotalFee ,string NewName);
 

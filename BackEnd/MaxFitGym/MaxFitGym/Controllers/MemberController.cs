@@ -26,8 +26,8 @@ namespace MaxFitGym.Controllers
         {
             try
             {
-                _memberRepository.AddMember(memberRegister);
-                return Ok(memberRegister);
+                var data=_memberRepository.AddMember(memberRegister);
+                return Ok(data);
             }
             catch (Exception ex)
             {
