@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    const viewAllPrograms_url = "http://localhost:5297/api/Program/Get-All-Programs"
+    const viewAllPrograms_url = "http://localhost:5297/api/Program/Get-All-Programs";
     const viewProgramById_url = "http://localhost:5297/api/Program/Get-Progr-By-ID";
     const updateProgramById_url = "http://localhost:5297/api/Program/Update-Program";
     const deleteProgramById_url = "http://localhost:5297/api/Program/Delete-Program";
@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 throw new Error('Network response was not ok');
             }
             programs = await response.json();
+            console.log(programs);
 
             // Render programs in the table
             if (!programTableBody) {
@@ -70,6 +71,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     modal.style.display = "none";
                 }
             };
+
+            console.log("Hi")
     
             const programId = parseInt(event.target.dataset.id);
             const program = programs.find(p => p.id === programId); // Replace with actual program retrieval logic
@@ -97,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
         event.preventDefault();
     
         // Get updated inputs
-        const name = document.getElementById('pname').value;
+        const programName = document.getElementById('pname').value;
         const fee = document.getElementById('fees').value;
         const type = document.querySelector('input[name="type"]:checked').value;
     
@@ -105,12 +108,15 @@ document.addEventListener('DOMContentLoaded', function () {
         const updatedProgramData = {
             id: programId,
             totalFee: fee,
+            programName : programName
         };
+
+        console.log(updatedProgramData);
     
         const updateProgramById_url = "http://localhost:5297/api/Program/Update-Program";
     
         // Update Program
-        await fetch(`${updateProgramById_url}/${updatedProgramData.id}/${updatedProgramData.totalFee}`, {
+        await fetch(`${updateProgramById_url}/${updatedProgramData.id}/${updatedProgramData.totalFee}/${updatedProgramData.programName}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -120,13 +126,14 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(data => {
             console.log('Success:', data);
             // Once data is successfully updated, fetch the latest program list and re-render the table
-            GetAllPrograms();
+          
             // Close the modal
             document.getElementById("programModal").style.display = "none";
         })
         .catch((error) => {
             console.error('Error:', error);
         });
+        GetAllPrograms();
     }
     
     document.getElementById('addProgramButton').addEventListener('click', function () {
@@ -165,8 +172,7 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log(programId)
         const deleteProgramById_url = "http://localhost:5297/api/Program/Delete-Program";
 
-        const response = await fetch(`${deleteProgramById_url}/${programId}`, {
-             method: 'DELETE' });
+        const response = await fetch(`${deleteProgramById_url}/${programId}`, { method: 'DELETE' });
         if (response.ok) {
             console.log(response)
         }

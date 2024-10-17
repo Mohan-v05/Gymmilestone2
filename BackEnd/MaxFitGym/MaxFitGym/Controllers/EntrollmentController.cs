@@ -31,7 +31,7 @@ namespace MaxFitGym.Controllers
             return Ok(EnrollList);
         }
 
-        [HttpGet("Get-Enrollment-By-ID /{Id}")]
+        [HttpGet("Get-Enrollment-By-ID/{Id}")]
         public IActionResult GetEnrollmentById(long Id)
         {
             try

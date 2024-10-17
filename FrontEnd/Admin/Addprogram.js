@@ -1,8 +1,4 @@
 const addProgram_url = "http://localhost:5297/api/Program/Add-program";
-const viewAllPrograms_url="http://localhost:5297/api/Program/Get-All-Programs"
-const viewProgramById_url = "${http://localhost:5297/api/Program/Get-Progr-By-ID}/${programId}";
-const deleteProgramById_url = "${http://localhost:5297/api/Program/Update-Program}/${programId}";
-const updateProgramById_url = "http://localhost:5297/api/Program/Delete-Program/${programId}";
 
 document.getElementById('programregistrationForm').addEventListener('submit', async function (event) {
     event.preventDefault();
@@ -35,9 +31,13 @@ document.getElementById('programregistrationForm').addEventListener('submit', as
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
-
-        const result = await response.json().then(data => console.log(data));
-        alert('Registration successful! Your Program ID is ' );
+        var id;
+        const result = await response.json().then((data)=>{
+           console.log(data)
+           id=data.id
+        });
+        console.log(result)
+        alert(+programData.programName+"Created" +"It ID :"+id);
 
     } catch (error) {
         console.error('There was a problem with the fetch operation:', error);
