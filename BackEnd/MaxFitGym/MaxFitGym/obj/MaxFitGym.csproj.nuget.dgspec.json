@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\UT01360\\Desktop\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\MaxFitGym.csproj": {}
+    "C:\\Users\\UT01146\\Desktop\\GYM payments\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\MaxFitGym.csproj": {}
   },
   "projects": {
-    "C:\\Users\\UT01360\\Desktop\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\MaxFitGym.csproj": {
+    "C:\\Users\\UT01146\\Desktop\\GYM payments\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\MaxFitGym.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\UT01360\\Desktop\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\MaxFitGym.csproj",
+        "projectUniqueName": "C:\\Users\\UT01146\\Desktop\\GYM payments\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\MaxFitGym.csproj",
         "projectName": "MaxFitGym",
-        "projectPath": "C:\\Users\\UT01360\\Desktop\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\MaxFitGym.csproj",
-        "packagesPath": "C:\\Users\\UT01360\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\UT01360\\Desktop\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\obj\\",
+        "projectPath": "C:\\Users\\UT01146\\Desktop\\GYM payments\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\MaxFitGym.csproj",
+        "packagesPath": "C:\\Users\\UT01146\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\UT01146\\Desktop\\GYM payments\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\UT01360\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\UT01146\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

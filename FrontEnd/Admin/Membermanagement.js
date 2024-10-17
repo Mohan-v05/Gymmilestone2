@@ -5,60 +5,77 @@ document.addEventListener('DOMContentLoaded', function () {
     const addNewMemberButton = document.getElementById('addNewMember');
     const goHomeButton = document.getElementById('goHome');
 
-    const allUsersData_apiUrl = "http://localhost:3000/allUsersData";
+    const allUsersData_apiUrl ='http://localhost:5297/api/Member/Get-All-Members';
+    const updateUser_URl='http://localhost:5297/api/Member/Update-Member/1';
+    const getUser_By_Id= 'http://localhost:5297/api/Member/Get-Member-By-ID/1';
+    const delete_By_ID='http://localhost:5297/api/Member/Delete-Member/1';
 
-    async function fetchData() {
+
+    let Members = [];
+  
+    //     // Attach event listeners for edit and delete buttons
+    //     document.querySelectorAll('.edit-button').forEach(button => {
+    //         button.addEventListener('click', handleEdit);
+    //     });
+    //     document.querySelectorAll('.delete-button').forEach(button => {
+    //         button.addEventListener('click', handleDelete);
+    //     });
+    // }
+   
+
+    // Fetch Programs Data from Database and Render Them
+    async function GetAllMembers() {
         try {
-            const response = await fetch(allUsersData_apiUrl); // Update the path to your JSON file
+            const response = await fetch(allUsersData_apiUrl);
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
-            return await response.json();
+            Members = await response.json()
+            
+            console.log(Members.result);
+           
+           
+            // Render programs in the table
+            if (!tableBody) {
+                console.error('Table body not found!');
+                return;
+            }
+
+            tableBody.innerHTML = '';
+            console.log("Hi") ;// Clear existing rows
+            MembersArray=Members.result;
+            MembersArray.forEach(member => {
+                const row = document.createElement('tr');
+                row.setAttribute('id', member.id); // Use program.id directly
+
+                row.innerHTML = `
+                    <td>${member.id}</td>
+                    <td>${member.firstName}</td>
+                    <td>${member.lastName}</td>
+                    <td>${member.nic}</td>
+                    <td>${member.age}</td>
+                    <td>${member.height}</td>
+                    <td>${member.weight}</td>
+                    <td>${member.contactNumber}</td>
+                    <td>${member.address}</td>
+                    <td>${member.gender}</td>
+                    <td>${member.membershiptype}</td>
+                   
+                    <td>
+                        <button class="edit-button" id="openModal" style="background-color: #c9bfaf;" data-id="${member.id}">Edit</button>
+                        <button  class="delete-button" style="background-color: #ed7272;" data-id="${member.id}">Delete</button>
+                    </td>
+                `;
+
+                tableBody.appendChild(row);
+            });
         } catch (error) {
-            console.error('There has been a problem with your fetch operation:', error);
-            return [];
+            console.error('There was a problem with the fetch operation:', error);
         }
     }
+    GetAllMembers();
+    
 
-    async function renderTable() {
-        const allUsersData = await fetchData();        
-       
-        // Check if tableBody exists
-        if (!tableBody) {
-            console.error('Table body not found!');
-            return;
-        }
-
-        tableBody.innerHTML = '';
-        allUsersData.forEach(user => {
-            const row = document.createElement('tr');
-
-            row.innerHTML = `
-                <td>${user.gymId}</td>
-                <td>${user.name}</td>
-                <td>${user.nic}</td>
-                <td>${user.phone}</td>
-                <td>${user.address}</td>
-                <td>${user.gender}</td>
-                <td>${user.training.join(', ')}</td>
-                <td>${user.monthlyFees ? 'Monthly' : user.annualFees ? 'Annual' : 'N/A'}</td>
-                <td>
-                    <button class="edit-button" style="background-color: #c9bfaf;" data-id="${user.gymId}">Edit</button>
-                    <button class="delete-button" style="background-color: #ed7272;" data-id="${user.gymId}">Delete</button>
-                </td>
-            `;
-
-            tableBody.appendChild(row);
-        });
-
-        // Attach event listeners for edit and delete buttons
-        document.querySelectorAll('.edit-button').forEach(button => {
-            button.addEventListener('click', handleEdit);
-        });
-        document.querySelectorAll('.delete-button').forEach(button => {
-            button.addEventListener('click', handleDelete);
-        });
-    }
 
     function handleEdit(event) {
         const gymId = event.target.dataset.id;
@@ -113,5 +130,5 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    renderTable(); // Call to render the table with fetched data
+   // renderTable(); // Call to render the table with fetched data
 });
