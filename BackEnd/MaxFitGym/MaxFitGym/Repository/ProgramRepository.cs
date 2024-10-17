@@ -23,7 +23,7 @@ namespace MaxFitGym.Repository
                 connection.Open();
                 var command = connection.CreateCommand();
                 command = connection.CreateCommand();
-                command.CommandText = "INSERT INTO Programs (ProgramName,Type,TotalFee) VALUES (@programName,@type,@totalFee);select last_insert_rowid()";
+                command.CommandText = "INSERT INTO Programs (ProgramName,Type,TotalFee) VALUES (@programName,@type,@totalFee) RETURNING Id";
                 command.Parameters.AddWithValue("@programName", programDto.ProgramName);
                 command.Parameters.AddWithValue("@type", programDto.Type);
                 command.Parameters.AddWithValue("@totalFee", programDto.TotalFee);

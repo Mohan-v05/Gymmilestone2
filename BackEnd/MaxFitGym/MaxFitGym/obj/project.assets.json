@@ -741,19 +741,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\UT01146\\.nuget\\packages\\": {}
+    "C:\\Users\\ut03304\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "X:\\GYM back end working folder\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\MaxFitGym.csproj",
+      "projectUniqueName": "X:\\Abisham Gym\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\MaxFitGym.csproj",
       "projectName": "MaxFitGym",
-      "projectPath": "X:\\GYM back end working folder\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\MaxFitGym.csproj",
-      "packagesPath": "C:\\Users\\UT01146\\.nuget\\packages\\",
-      "outputPath": "X:\\GYM back end working folder\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\obj\\",
+      "projectPath": "X:\\Abisham Gym\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\MaxFitGym.csproj",
+      "packagesPath": "C:\\Users\\ut03304\\.nuget\\packages\\",
+      "outputPath": "X:\\Abisham Gym\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\UT01146\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ut03304\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

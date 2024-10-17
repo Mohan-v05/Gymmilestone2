@@ -24,8 +24,16 @@ namespace MaxFitGym.Controllers
         [HttpPost("Add-Member")]
         public IActionResult AddMembers([FromForm] MemberRegisterRequestDTO memberRegister)
         {
-            _memberRepository.AddMember(memberRegister);
-            return Ok(memberRegister);
+            try
+            {
+                _memberRepository.AddMember(memberRegister);
+                return Ok(memberRegister);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            
         }
 
 
@@ -40,7 +48,7 @@ namespace MaxFitGym.Controllers
 
 
         // Get member By Id
-        [HttpGet("Get-Member-By-ID /{MemberID}")]
+        [HttpGet("Get-Member-By-ID/{MemberID}")]
         public IActionResult GetmemberById(int MemberID)
         {
             try

@@ -1,85 +1,97 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "X:\\GYM back end working folder\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\",
+  "WorkspaceRootPath": "X:\\Abisham Gym\\Gymmilestone2\\BackEnd\\MaxFitGym\\",
   "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|x:\\abisham gym\\gymmilestone2\\backend\\maxfitgym\\maxfitgym\\repository\\memberrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|solutionrelative:maxfitgym\\repository\\memberrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|x:\\abisham gym\\gymmilestone2\\backend\\maxfitgym\\maxfitgym\\controllers\\membercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|solutionrelative:maxfitgym\\controllers\\membercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|x:\\abisham gym\\gymmilestone2\\backend\\maxfitgym\\maxfitgym\\repository\\enrollmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|solutionrelative:maxfitgym\\repository\\enrollmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|x:\\abisham gym\\gymmilestone2\\backend\\maxfitgym\\maxfitgym\\repository\\programrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|solutionrelative:maxfitgym\\repository\\programrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|x:\\abisham gym\\gymmilestone2\\backend\\maxfitgym\\maxfitgym\\controllers\\entrollmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|solutionrelative:maxfitgym\\controllers\\entrollmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|x:\\abisham gym\\gymmilestone2\\backend\\maxfitgym\\maxfitgym\\models\\responsemodel\\memberresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|solutionrelative:maxfitgym\\models\\responsemodel\\memberresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|x:\\abisham gym\\gymmilestone2\\backend\\maxfitgym\\maxfitgym\\irepository\\ienrollmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|solutionrelative:maxfitgym\\irepository\\ienrollmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|x:\\abisham gym\\gymmilestone2\\backend\\maxfitgym\\maxfitgym\\database\\databaseinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|solutionrelative:maxfitgym\\database\\databaseinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|x:\\abisham gym\\gymmilestone2\\backend\\maxfitgym\\maxfitgym\\models\\responsemodel\\enrollmentresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|solutionrelative:maxfitgym\\models\\responsemodel\\enrollmentresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|x:\\abisham gym\\gymmilestone2\\backend\\maxfitgym\\maxfitgym\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|solutionrelative:maxfitgym\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|x:\\abisham gym\\gymmilestone2\\backend\\maxfitgym\\maxfitgym\\irepository\\imemberrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|solutionrelative:maxfitgym\\irepository\\imemberrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|x:\\abisham gym\\gymmilestone2\\backend\\maxfitgym\\maxfitgym\\entities\\enrollments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|solutionrelative:maxfitgym\\entities\\enrollments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|x:\\abisham gym\\gymmilestone2\\backend\\maxfitgym\\maxfitgym\\entities\\member.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|solutionrelative:maxfitgym\\entities\\member.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|x:\\abisham gym\\gymmilestone2\\backend\\maxfitgym\\maxfitgym\\controllers\\programcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|solutionrelative:maxfitgym\\controllers\\programcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|x:\\abisham gym\\gymmilestone2\\backend\\maxfitgym\\maxfitgym\\gym.db||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|solutionrelative:maxfitgym\\gym.db||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|x:\\abisham gym\\gymmilestone2\\backend\\maxfitgym\\maxfitgym\\maxfitgym.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|solutionrelative:maxfitgym\\maxfitgym.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|x:\\abisham gym\\gymmilestone2\\backend\\maxfitgym\\maxfitgym\\models\\requestmodel\\memberregisterrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|solutionrelative:maxfitgym\\models\\requestmodel\\memberregisterrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|x:\\abisham gym\\gymmilestone2\\backend\\maxfitgym\\maxfitgym\\models\\requestmodel\\enrollmentrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|solutionrelative:maxfitgym\\models\\requestmodel\\enrollmentrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|x:\\abisham gym\\gymmilestone2\\backend\\maxfitgym\\maxfitgym\\models\\requestmodel\\memberupdaterequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|solutionrelative:maxfitgym\\models\\requestmodel\\memberupdaterequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|x:\\gym back end working folder\\new folder\\gymmilestone2\\backend\\maxfitgym\\maxfitgym\\repository\\memberrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|solutionrelative:maxfitgym\\repository\\memberrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|x:\\gym back end working folder\\new folder\\gymmilestone2\\backend\\maxfitgym\\maxfitgym\\controllers\\programcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|solutionrelative:maxfitgym\\controllers\\programcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|x:\\gym back end working folder\\new folder\\gymmilestone2\\backend\\maxfitgym\\maxfitgym\\controllers\\membercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|solutionrelative:maxfitgym\\controllers\\membercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|x:\\gym back end working folder\\new folder\\gymmilestone2\\backend\\maxfitgym\\maxfitgym\\controllers\\entrollmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|solutionrelative:maxfitgym\\controllers\\entrollmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|x:\\gym back end working folder\\new folder\\gymmilestone2\\backend\\maxfitgym\\maxfitgym\\models\\requestmodel\\memberupdaterequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|solutionrelative:maxfitgym\\models\\requestmodel\\memberupdaterequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|x:\\gym back end working folder\\new folder\\gymmilestone2\\backend\\maxfitgym\\maxfitgym\\models\\requestmodel\\memberregisterrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|solutionrelative:maxfitgym\\models\\requestmodel\\memberregisterrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|x:\\gym back end working folder\\new folder\\gymmilestone2\\backend\\maxfitgym\\maxfitgym\\database\\databaseinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|solutionrelative:maxfitgym\\database\\databaseinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|x:\\gym back end working folder\\new folder\\gymmilestone2\\backend\\maxfitgym\\maxfitgym\\repository\\programrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|solutionrelative:maxfitgym\\repository\\programrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|x:\\gym back end working folder\\new folder\\gymmilestone2\\backend\\maxfitgym\\maxfitgym\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|x:\\abisham gym\\gymmilestone2\\backend\\maxfitgym\\maxfitgym\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|solutionrelative:maxfitgym\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|x:\\gym back end working folder\\new folder\\gymmilestone2\\backend\\maxfitgym\\maxfitgym\\models\\responsemodel\\memberresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|solutionrelative:maxfitgym\\models\\responsemodel\\memberresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|x:\\gym back end working folder\\new folder\\gymmilestone2\\backend\\maxfitgym\\maxfitgym\\gym.db||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|solutionrelative:maxfitgym\\gym.db||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|x:\\gym back end working folder\\new folder\\gymmilestone2\\backend\\maxfitgym\\maxfitgym\\maxfitgym.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|solutionrelative:maxfitgym\\maxfitgym.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|x:\\gym back end working folder\\new folder\\gymmilestone2\\backend\\maxfitgym\\maxfitgym\\entities\\member.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|solutionrelative:maxfitgym\\entities\\member.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|x:\\gym back end working folder\\new folder\\gymmilestone2\\backend\\maxfitgym\\maxfitgym\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|solutionrelative:maxfitgym\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|x:\\gym back end working folder\\new folder\\gymmilestone2\\backend\\maxfitgym\\maxfitgym\\models\\programdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|x:\\abisham gym\\gymmilestone2\\backend\\maxfitgym\\maxfitgym\\models\\programdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|solutionrelative:maxfitgym\\models\\programdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|x:\\gym back end working folder\\new folder\\gymmilestone2\\backend\\maxfitgym\\maxfitgym\\entities\\entrollment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|solutionrelative:maxfitgym\\entities\\entrollment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|x:\\gym back end working folder\\new folder\\gymmilestone2\\backend\\maxfitgym\\maxfitgym\\entities\\programs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|x:\\abisham gym\\gymmilestone2\\backend\\maxfitgym\\maxfitgym\\entities\\programs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|solutionrelative:maxfitgym\\entities\\programs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|x:\\gym back end working folder\\new folder\\gymmilestone2\\backend\\maxfitgym\\maxfitgym\\irepository\\imemberrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|solutionrelative:maxfitgym\\irepository\\imemberrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|x:\\gym back end working folder\\new folder\\gymmilestone2\\backend\\maxfitgym\\maxfitgym\\irepository\\iprogramrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6AE9016C-671E-4313-8DBD-ED04FFA18612}|MaxFitGym\\MaxFitGym.csproj|solutionrelative:maxfitgym\\irepository\\iprogramrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -89,42 +101,95 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "MaxFitGym.csproj",
-              "DocumentMoniker": "X:\\GYM back end working folder\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\MaxFitGym.csproj",
+              "DocumentMoniker": "X:\\Abisham Gym\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\MaxFitGym.csproj",
               "RelativeDocumentMoniker": "MaxFitGym\\MaxFitGym.csproj",
-              "ToolTip": "X:\\GYM back end working folder\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\MaxFitGym.csproj",
+              "ToolTip": "X:\\Abisham Gym\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\MaxFitGym.csproj",
               "RelativeToolTip": "MaxFitGym\\MaxFitGym.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAlAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2024-10-07T05:21:29.796Z",
-              "IsPinned": true,
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "EnrollmentResponseDTO.cs",
+              "DocumentMoniker": "X:\\Abisham Gym\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Models\\ResponseModel\\EnrollmentResponseDTO.cs",
+              "RelativeDocumentMoniker": "MaxFitGym\\Models\\ResponseModel\\EnrollmentResponseDTO.cs",
+              "ToolTip": "X:\\Abisham Gym\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Models\\ResponseModel\\EnrollmentResponseDTO.cs",
+              "RelativeToolTip": "MaxFitGym\\Models\\ResponseModel\\EnrollmentResponseDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T08:17:20.57Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Microsoft.Common.CurrentVersion.targets",
-              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
-              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
-              "ViewState": "AQIAAGUUAAAAAAAAAAArwHcUAAALAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2024-10-16T07:22:46.719Z",
+              "DocumentIndex": 3,
+              "Title": "ProgramRepository.cs",
+              "DocumentMoniker": "X:\\Abisham Gym\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Repository\\ProgramRepository.cs",
+              "RelativeDocumentMoniker": "MaxFitGym\\Repository\\ProgramRepository.cs",
+              "ToolTip": "X:\\Abisham Gym\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Repository\\ProgramRepository.cs",
+              "RelativeToolTip": "MaxFitGym\\Repository\\ProgramRepository.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABkAAACMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T06:12:04.062Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EnrollmentRepository.cs",
+              "DocumentMoniker": "X:\\Abisham Gym\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Repository\\EnrollmentRepository.cs",
+              "RelativeDocumentMoniker": "MaxFitGym\\Repository\\EnrollmentRepository.cs",
+              "ToolTip": "X:\\Abisham Gym\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Repository\\EnrollmentRepository.cs",
+              "RelativeToolTip": "MaxFitGym\\Repository\\EnrollmentRepository.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAQwA4AAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T08:00:45.666Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "MemberController.cs",
+              "DocumentMoniker": "X:\\Abisham Gym\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Controllers\\MemberController.cs",
+              "RelativeDocumentMoniker": "MaxFitGym\\Controllers\\MemberController.cs",
+              "ToolTip": "X:\\Abisham Gym\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Controllers\\MemberController.cs",
+              "RelativeToolTip": "MaxFitGym\\Controllers\\MemberController.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAA1wCMAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T09:14:44.294Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "EntrollmentController.cs",
+              "DocumentMoniker": "X:\\Abisham Gym\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Controllers\\EntrollmentController.cs",
+              "RelativeDocumentMoniker": "MaxFitGym\\Controllers\\EntrollmentController.cs",
+              "ToolTip": "X:\\Abisham Gym\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Controllers\\EntrollmentController.cs",
+              "RelativeToolTip": "MaxFitGym\\Controllers\\EntrollmentController.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAgAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T07:17:47.201Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "MemberRepository.cs",
-              "DocumentMoniker": "X:\\GYM back end working folder\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Repository\\MemberRepository.cs",
+              "DocumentMoniker": "X:\\Abisham Gym\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Repository\\MemberRepository.cs",
               "RelativeDocumentMoniker": "MaxFitGym\\Repository\\MemberRepository.cs",
-              "ToolTip": "X:\\GYM back end working folder\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Repository\\MemberRepository.cs",
+              "ToolTip": "X:\\Abisham Gym\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Repository\\MemberRepository.cs",
               "RelativeToolTip": "MaxFitGym\\Repository\\MemberRepository.cs",
-              "ViewState": "AQIAAD8AAAAAAAAAAAAkwFkAAAAqAAAA",
+              "ViewState": "AQIAAHcAAAAAAAAAAAAIwIYAAABKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-07T07:19:20.172Z",
               "EditorCaption": ""
@@ -132,34 +197,168 @@
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "MemberRegisterRequestDTO.cs",
-              "DocumentMoniker": "X:\\GYM back end working folder\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Models\\RequestModel\\MemberRegisterRequestDTO.cs",
-              "RelativeDocumentMoniker": "MaxFitGym\\Models\\RequestModel\\MemberRegisterRequestDTO.cs",
-              "ToolTip": "X:\\GYM back end working folder\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Models\\RequestModel\\MemberRegisterRequestDTO.cs",
-              "RelativeToolTip": "MaxFitGym\\Models\\RequestModel\\MemberRegisterRequestDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAnAAAA",
+              "Title": "IEnrollmentRepository.cs",
+              "DocumentMoniker": "X:\\Abisham Gym\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\IRepository\\IEnrollmentRepository.cs",
+              "RelativeDocumentMoniker": "MaxFitGym\\IRepository\\IEnrollmentRepository.cs",
+              "ToolTip": "X:\\Abisham Gym\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\IRepository\\IEnrollmentRepository.cs",
+              "RelativeToolTip": "MaxFitGym\\IRepository\\IEnrollmentRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T10:35:40.606Z"
+              "WhenOpened": "2024-10-17T03:46:16.865Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Gym.db",
-              "DocumentMoniker": "X:\\GYM back end working folder\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Gym.db",
-              "RelativeDocumentMoniker": "MaxFitGym\\Gym.db",
-              "ToolTip": "X:\\GYM back end working folder\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Gym.db",
-              "RelativeToolTip": "MaxFitGym\\Gym.db",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGGSURBVDhPY2SAgsry0vsMDP8VoFwsgPHBn38Mgd3d3RegAkDl//9DWSADSv7/\u002BvULJwbJNzXUvi8tLTWAagEDJihNFEhITBbg5ebYj2wI0QYICAgwTJ82heH79\u002B8CLEz/90OFEQDdC3uOnPm/69ApFDEYBqmFasN0wdXbDxh2HDzJ8O79B4a3794zrN9\u002BgOHc5RtQWUyAYQALExPDt2/fGUz0NBlMDbQYvn3/xsDCgtunGDJ//v5l\u002BP37F8Pff38Z/gHZf37/Zvjz5y9UFhNgGPDz508GUOI4cPQUw74jJxgYgZxTZ88DXfIDogANYBhgpKvBEObnxsDHw8XwF2jzsxdPGR49eczQ0TeR4cbN21BVCIDTc4FeLgyezjYMHz98ZGirKWf48O4dAwcHG1QWAXCHDhB8/QoMQKCK3KJSBlZWZpSUCwN4DVBXVWaoKMpnsLG0YOjtaGNQVMDMKngNAAFuLi6G8NBgKA8TEDSAEEDKzsXA7MyIJzsjg/8P2jt7FRkYGBgAmdPDqvBXzR4AAAAASUVORK5CYII=",
-              "WhenOpened": "2024-10-15T11:46:43.09Z"
+              "DocumentIndex": 10,
+              "Title": "IMemberRepository.cs",
+              "DocumentMoniker": "X:\\Abisham Gym\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\IRepository\\IMemberRepository.cs",
+              "RelativeDocumentMoniker": "MaxFitGym\\IRepository\\IMemberRepository.cs",
+              "ToolTip": "X:\\Abisham Gym\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\IRepository\\IMemberRepository.cs",
+              "RelativeToolTip": "MaxFitGym\\IRepository\\IMemberRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T07:19:46.934Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MemberResponseDTO.cs",
+              "DocumentMoniker": "X:\\Abisham Gym\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Models\\ResponseModel\\MemberResponseDTO.cs",
+              "RelativeDocumentMoniker": "MaxFitGym\\Models\\ResponseModel\\MemberResponseDTO.cs",
+              "ToolTip": "X:\\Abisham Gym\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Models\\ResponseModel\\MemberResponseDTO.cs",
+              "RelativeToolTip": "MaxFitGym\\Models\\ResponseModel\\MemberResponseDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T10:34:52.573Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DatabaseInitializer.cs",
+              "DocumentMoniker": "X:\\Abisham Gym\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\DataBase\\DatabaseInitializer.cs",
+              "RelativeDocumentMoniker": "MaxFitGym\\DataBase\\DatabaseInitializer.cs",
+              "ToolTip": "X:\\Abisham Gym\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\DataBase\\DatabaseInitializer.cs",
+              "RelativeToolTip": "MaxFitGym\\DataBase\\DatabaseInitializer.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAowCsAAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T08:00:01.52Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "X:\\Abisham Gym\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Program.cs",
+              "RelativeDocumentMoniker": "MaxFitGym\\Program.cs",
+              "ToolTip": "X:\\Abisham Gym\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Program.cs",
+              "RelativeToolTip": "MaxFitGym\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADUAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T05:15:09.404Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Enrollments.cs",
+              "DocumentMoniker": "X:\\Abisham Gym\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Entities\\Enrollments.cs",
+              "RelativeDocumentMoniker": "MaxFitGym\\Entities\\Enrollments.cs",
+              "ToolTip": "X:\\Abisham Gym\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Entities\\Enrollments.cs",
+              "RelativeToolTip": "MaxFitGym\\Entities\\Enrollments.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T08:14:38.014Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Member.cs",
+              "DocumentMoniker": "X:\\Abisham Gym\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Entities\\Member.cs",
+              "RelativeDocumentMoniker": "MaxFitGym\\Entities\\Member.cs",
+              "ToolTip": "X:\\Abisham Gym\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Entities\\Member.cs",
+              "RelativeToolTip": "MaxFitGym\\Entities\\Member.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T07:22:00.583Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ProgramController.cs",
+              "DocumentMoniker": "X:\\Abisham Gym\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Controllers\\ProgramController.cs",
+              "RelativeDocumentMoniker": "MaxFitGym\\Controllers\\ProgramController.cs",
+              "ToolTip": "X:\\Abisham Gym\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Controllers\\ProgramController.cs",
+              "RelativeToolTip": "MaxFitGym\\Controllers\\ProgramController.cs",
+              "ViewState": "AQIAADQAAAAAAAAAAAAowE0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T05:01:54.47Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Gym.db",
+              "DocumentMoniker": "X:\\Abisham Gym\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Gym.db",
+              "RelativeDocumentMoniker": "MaxFitGym\\Gym.db",
+              "ToolTip": "X:\\Abisham Gym\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Gym.db",
+              "RelativeToolTip": "MaxFitGym\\Gym.db",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACQAAAD/DwAA",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGGSURBVDhPY2SAgsry0vsMDP8VoFwsgPHBn38Mgd3d3RegAkDl//9DWSADSv7/\u002BvULJwbJNzXUvi8tLTWAagEDJihNFEhITBbg5ebYj2wI0QYICAgwTJ82heH79\u002B8CLEz/90OFEQDdC3uOnPm/69ApFDEYBqmFasN0wdXbDxh2HDzJ8O79B4a3794zrN9\u002BgOHc5RtQWUyAYQALExPDt2/fGUz0NBlMDbQYvn3/xsDCgtunGDJ//v5l\u002BP37F8Pff38Z/gHZf37/Zvjz5y9UFhNgGPDz508GUOI4cPQUw74jJxgYgZxTZ88DXfIDogANYBhgpKvBEObnxsDHw8XwF2jzsxdPGR49eczQ0TeR4cbN21BVCIDTc4FeLgyezjYMHz98ZGirKWf48O4dAwcHG1QWAXCHDhB8/QoMQKCK3KJSBlZWZpSUCwN4DVBXVWaoKMpnsLG0YOjtaGNQVMDMKngNAAFuLi6G8NBgKA8TEDSAEEDKzsXA7MyIJzsjg/8P2jt7FRkYGBgAmdPDqvBXzR4AAAAASUVORK5CYII=",
+              "WhenOpened": "2024-10-16T11:04:27.969Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "MemberRegisterRequestDTO.cs",
+              "DocumentMoniker": "X:\\Abisham Gym\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Models\\RequestModel\\MemberRegisterRequestDTO.cs",
+              "RelativeDocumentMoniker": "MaxFitGym\\Models\\RequestModel\\MemberRegisterRequestDTO.cs",
+              "ToolTip": "X:\\Abisham Gym\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Models\\RequestModel\\MemberRegisterRequestDTO.cs",
+              "RelativeToolTip": "MaxFitGym\\Models\\RequestModel\\MemberRegisterRequestDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAIAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T09:40:15.866Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "EnrollmentRequestDTO.cs",
+              "DocumentMoniker": "X:\\Abisham Gym\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Models\\RequestModel\\EnrollmentRequestDTO.cs",
+              "RelativeDocumentMoniker": "MaxFitGym\\Models\\RequestModel\\EnrollmentRequestDTO.cs",
+              "ToolTip": "X:\\Abisham Gym\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Models\\RequestModel\\EnrollmentRequestDTO.cs",
+              "RelativeToolTip": "MaxFitGym\\Models\\RequestModel\\EnrollmentRequestDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T09:15:57.288Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "MemberUpdateRequestDTO.cs",
+              "DocumentMoniker": "X:\\Abisham Gym\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Models\\RequestModel\\MemberUpdateRequestDTO.cs",
+              "RelativeDocumentMoniker": "MaxFitGym\\Models\\RequestModel\\MemberUpdateRequestDTO.cs",
+              "ToolTip": "X:\\Abisham Gym\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Models\\RequestModel\\MemberUpdateRequestDTO.cs",
+              "RelativeToolTip": "MaxFitGym\\Models\\RequestModel\\MemberUpdateRequestDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T05:07:55.904Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Microsoft.Common.CurrentVersion.targets",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "ViewState": "AQIAAGUUAAAAAAAAAAArwHcUAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2024-10-16T07:22:46.719Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
               "Title": "appsettings.json",
-              "DocumentMoniker": "X:\\GYM back end working folder\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\appsettings.json",
+              "DocumentMoniker": "X:\\Abisham Gym\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\appsettings.json",
               "RelativeDocumentMoniker": "MaxFitGym\\appsettings.json",
-              "ToolTip": "X:\\GYM back end working folder\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\appsettings.json",
+              "ToolTip": "X:\\Abisham Gym\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\appsettings.json",
               "RelativeToolTip": "MaxFitGym\\appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
@@ -167,131 +366,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "DatabaseInitializer.cs",
-              "DocumentMoniker": "X:\\GYM back end working folder\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\DataBase\\DatabaseInitializer.cs",
-              "RelativeDocumentMoniker": "MaxFitGym\\DataBase\\DatabaseInitializer.cs",
-              "ToolTip": "X:\\GYM back end working folder\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\DataBase\\DatabaseInitializer.cs",
-              "RelativeToolTip": "MaxFitGym\\DataBase\\DatabaseInitializer.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAqwBgAAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T08:00:01.52Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MemberController.cs",
-              "DocumentMoniker": "X:\\GYM back end working folder\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Controllers\\MemberController.cs",
-              "RelativeDocumentMoniker": "MaxFitGym\\Controllers\\MemberController.cs",
-              "ToolTip": "X:\\GYM back end working folder\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Controllers\\MemberController.cs",
-              "RelativeToolTip": "MaxFitGym\\Controllers\\MemberController.cs",
-              "ViewState": "AQIAADIAAAAAAAAAAAAwwDsAAAA4AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T07:14:41.672Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "EntrollmentController.cs",
-              "DocumentMoniker": "X:\\GYM back end working folder\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Controllers\\EntrollmentController.cs",
-              "RelativeDocumentMoniker": "MaxFitGym\\Controllers\\EntrollmentController.cs",
-              "ToolTip": "X:\\GYM back end working folder\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Controllers\\EntrollmentController.cs",
-              "RelativeToolTip": "MaxFitGym\\Controllers\\EntrollmentController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T07:17:47.201Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Member.cs",
-              "DocumentMoniker": "X:\\GYM back end working folder\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Entities\\Member.cs",
-              "RelativeDocumentMoniker": "MaxFitGym\\Entities\\Member.cs",
-              "ToolTip": "X:\\GYM back end working folder\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Entities\\Member.cs",
-              "RelativeToolTip": "MaxFitGym\\Entities\\Member.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwBIAAAAyAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T07:22:00.583Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ProgramController.cs",
-              "DocumentMoniker": "X:\\GYM back end working folder\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Controllers\\ProgramController.cs",
-              "RelativeDocumentMoniker": "MaxFitGym\\Controllers\\ProgramController.cs",
-              "ToolTip": "X:\\GYM back end working folder\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Controllers\\ProgramController.cs",
-              "RelativeToolTip": "MaxFitGym\\Controllers\\ProgramController.cs",
-              "ViewState": "AQIAADgAAAAAAAAAAAAIwE0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T05:01:54.47Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ProgramRepository.cs",
-              "DocumentMoniker": "X:\\GYM back end working folder\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Repository\\ProgramRepository.cs",
-              "RelativeDocumentMoniker": "MaxFitGym\\Repository\\ProgramRepository.cs",
-              "ToolTip": "X:\\GYM back end working folder\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Repository\\ProgramRepository.cs",
-              "RelativeToolTip": "MaxFitGym\\Repository\\ProgramRepository.cs",
-              "ViewState": "AQIAADsAAAAAAAAAAAAwwFUAAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T06:12:04.062Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "MemberUpdateRequestDTO.cs",
-              "DocumentMoniker": "X:\\GYM back end working folder\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Models\\RequestModel\\MemberUpdateRequestDTO.cs",
-              "RelativeDocumentMoniker": "MaxFitGym\\Models\\RequestModel\\MemberUpdateRequestDTO.cs",
-              "ToolTip": "X:\\GYM back end working folder\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Models\\RequestModel\\MemberUpdateRequestDTO.cs",
-              "RelativeToolTip": "MaxFitGym\\Models\\RequestModel\\MemberUpdateRequestDTO.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAwAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-15T05:07:55.904Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Program.cs",
-              "DocumentMoniker": "X:\\GYM back end working folder\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Program.cs",
-              "RelativeDocumentMoniker": "MaxFitGym\\Program.cs",
-              "ToolTip": "X:\\GYM back end working folder\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Program.cs",
-              "RelativeToolTip": "MaxFitGym\\Program.cs",
-              "ViewState": "AQIAACYAAAAAAAAAAAAAADkAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T05:15:09.404Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "MemberResponseDTO.cs",
-              "DocumentMoniker": "X:\\GYM back end working folder\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Models\\ResponseModel\\MemberResponseDTO.cs",
-              "RelativeDocumentMoniker": "MaxFitGym\\Models\\ResponseModel\\MemberResponseDTO.cs",
-              "ToolTip": "X:\\GYM back end working folder\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Models\\ResponseModel\\MemberResponseDTO.cs",
-              "RelativeToolTip": "MaxFitGym\\Models\\ResponseModel\\MemberResponseDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwBIAAAAyAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T10:34:52.573Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Entrollment.cs",
-              "DocumentMoniker": "X:\\GYM back end working folder\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Entities\\Entrollment.cs",
-              "RelativeDocumentMoniker": "MaxFitGym\\Entities\\Entrollment.cs",
-              "ToolTip": "X:\\GYM back end working folder\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Entities\\Entrollment.cs",
-              "RelativeToolTip": "MaxFitGym\\Entities\\Entrollment.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T07:18:33.938Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 22,
               "Title": "Programs.cs",
-              "DocumentMoniker": "X:\\GYM back end working folder\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Entities\\Programs.cs",
+              "DocumentMoniker": "X:\\Abisham Gym\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Entities\\Programs.cs",
               "RelativeDocumentMoniker": "MaxFitGym\\Entities\\Programs.cs",
-              "ToolTip": "X:\\GYM back end working folder\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Entities\\Programs.cs",
+              "ToolTip": "X:\\Abisham Gym\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Entities\\Programs.cs",
               "RelativeToolTip": "MaxFitGym\\Entities\\Programs.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -299,39 +378,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 21,
               "Title": "ProgramDTO.cs",
-              "DocumentMoniker": "X:\\GYM back end working folder\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Models\\ProgramDTO.cs",
+              "DocumentMoniker": "X:\\Abisham Gym\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Models\\ProgramDTO.cs",
               "RelativeDocumentMoniker": "MaxFitGym\\Models\\ProgramDTO.cs",
-              "ToolTip": "X:\\GYM back end working folder\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Models\\ProgramDTO.cs",
+              "ToolTip": "X:\\Abisham Gym\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\Models\\ProgramDTO.cs",
               "RelativeToolTip": "MaxFitGym\\Models\\ProgramDTO.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAqwAoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-07T05:42:49.489Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "IMemberRepository.cs",
-              "DocumentMoniker": "X:\\GYM back end working folder\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\IRepository\\IMemberRepository.cs",
-              "RelativeDocumentMoniker": "MaxFitGym\\IRepository\\IMemberRepository.cs",
-              "ToolTip": "X:\\GYM back end working folder\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\IRepository\\IMemberRepository.cs",
-              "RelativeToolTip": "MaxFitGym\\IRepository\\IMemberRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwA4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T07:19:46.934Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "IProgramRepository.cs",
-              "DocumentMoniker": "X:\\GYM back end working folder\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\IRepository\\IProgramRepository.cs",
-              "RelativeDocumentMoniker": "MaxFitGym\\IRepository\\IProgramRepository.cs",
-              "ToolTip": "X:\\GYM back end working folder\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\IRepository\\IProgramRepository.cs",
-              "RelativeToolTip": "MaxFitGym\\IRepository\\IProgramRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T05:50:08.446Z"
             }
           ]
         }
