@@ -132,3 +132,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
    // renderTable(); // Call to render the table with fetched data
 });
+
+function searchMembers() {
+    const searchTerm = document.getElementById('searchBar').value.toLowerCase();
+    const rows = document.querySelectorAll('#membersTable tbody tr');
+
+    rows.forEach(row => {
+        const memberName = row.querySelector('td:nth-child(2)').innerText.toLowerCase();
+        const memberId = row.querySelector('td:nth-child(1)').innerText.toLowerCase();
+        if (memberName.includes(searchTerm) || memberId.includes(searchTerm)) {
+            row.style.display = '';
+        } else {
+            row.style.display = 'none';
+        }
+    });
+}

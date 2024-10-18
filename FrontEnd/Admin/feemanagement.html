@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,19 +11,27 @@
             width: 100%;
             border-collapse: collapse;
         }
-        table, th, td {
+
+        table,
+        th,
+        td {
             border: 1px solid black;
         }
-        th, td {
+
+        th,
+        td {
             padding: 8px;
             text-align: left;
         }
+
         th {
             background-color: #f2f2f2;
         }
+
         h1 {
             color: #c21807;
         }
+
         .button {
             margin: 5px;
             padding: 10px 15px;
@@ -31,23 +40,28 @@
             color: white;
             cursor: pointer;
         }
+
         .button:hover {
             background-color: #c21807;
         }
-        .edit-button, .delete-button {
+
+        .edit-button,
+        .delete-button {
             margin: 0 5px;
             cursor: pointer;
         }
     </style>
 </head>
+
 <body>
     <h1>Manage Fees</h1>
-    
-    <input type="text" id="searchBox" placeholder="Search by Gym ID" />
-    <button id="searchButton" class="button">Search</button>
-    <button id="filterAnnual" class="button right">Annual</button>
-    <button id="filterMonthly" class="button right">Monthly</button>
-    
+
+    <input type="text" id="searchBar" placeholder="Search Member..." onkeyup="searchMembers()">
+    <button id="allMembers" class="button">All</button>
+    <button id="filterAnnual" class="button">Annual</button>
+    <button id="filterMonthly" class="button">Monthly</button>
+    <button id="goHome" class="button">Go Home</button>
+
     <table id="feesTable">
         <thead>
             <tr>
@@ -67,9 +81,21 @@
             <!-- Data will be populated here -->
         </tbody>
     </table>
-    
-    <button id="goHome" class="button">Go Home</button>
+
+    <div id="paymentModal"
+        style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); z-index: 1000;">
+        <div style="background: white; margin: 15% auto; padding: 20px; width: 300px;">
+            <h2>Payment Details</h2>
+            <p><strong>Member ID:</strong> <span id="memberId"></span></p>
+            <p><strong>Name:</strong> <span id="memberName"></span></p>
+            <p><strong>Training:</strong> <span id="memberTraining"></span></p>
+            <p><strong>Total Payment:</strong> <span id="totalPayment"></span></p>
+            <button id="closeModal" class="button">Close</button>
+            <button id="confirmPayment" class="button">Confirm Payment</button>
+        </div>
+    </div>
 
     <script src="feemanagement.js"></script>
 </body>
+
 </html>
