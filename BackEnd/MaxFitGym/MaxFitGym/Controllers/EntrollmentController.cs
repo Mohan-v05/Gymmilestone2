@@ -1,5 +1,7 @@
-﻿using MaxFitGym.IRepository;
+﻿using MaxFitGym.Entities;
+using MaxFitGym.IRepository;
 using MaxFitGym.Models.RequestModel;
+using MaxFitGym.Models.ResponseModel;
 using MaxFitGym.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -11,10 +13,14 @@ namespace MaxFitGym.Controllers
     public class EntrollmentController : ControllerBase
     {
         private readonly IEnrollmentRepository _enrollmentRepository;
+        private readonly IProgramRepository _programRepository;
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public EntrollmentController(IEnrollmentRepository enrollmentRepository)
+        public EntrollmentController(IEnrollmentRepository enrollmentRepository, IWebHostEnvironment webHostEnvironment, IProgramRepository programRepository)
         {
             _enrollmentRepository = enrollmentRepository;
+            _webHostEnvironment = webHostEnvironment;
+            _programRepository = programRepository;
         }
 
         [HttpPost("Add-Enrollment")]
@@ -37,9 +43,9 @@ namespace MaxFitGym.Controllers
             try
             {
                 var enroll = _enrollmentRepository.GetEnrollmentById(Id);
-
                 return Ok(enroll);
             }
+
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
@@ -51,6 +57,23 @@ namespace MaxFitGym.Controllers
         {
             _enrollmentRepository.DeleteEnrollment(Id);
             return Ok("Enroll Removed Successfully..");
+        }
+
+
+        //GetEntrolledProgramsByMemberId
+        [HttpGet("Get-Entrolled-Programs-By-MemberId/{Id}")]
+        public IActionResult GetEntrolledProgramsByMemberId(Int64 Id)
+        {
+            List<Programs> entrolledProgramsResponses = new List<Programs>();
+
+            var programIds = _enrollmentRepository.GetEntrolledProgramsByMemberId(Id);
+            foreach (var programId in programIds)
+            {
+               var program= _programRepository.GetProgramById(programId);
+
+                entrolledProgramsResponses.Add(program);
+            }
+            return Ok(entrolledProgramsResponses);
         }
     }
 }

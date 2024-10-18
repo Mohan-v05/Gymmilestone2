@@ -55,6 +55,14 @@ namespace MaxFitGym.DataBase
                       FOREIGN KEY (ProgramId) REFERENCES Programs(Id) ON DELETE CASCADE,
                       FOREIGN KEY (MemberId) REFERENCES MembersDetails(Id) ON DELETE CASCADE
                       );
+
+                    CREATE TABLE IF NOT EXISTS Payments (
+                        Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                      MemberId int,
+                      PaidDate DATE NOT NULL,
+                      Amount INT,
+                      FOREIGN KEY (MemberId) REFERENCES MembersDetails(Id) ON DELETE CASCADE
+                      );
                       
 
 
