@@ -1,4 +1,5 @@
-﻿using MaxFitGym.IRepository;
+﻿using MaxFitGym.Entities;
+using MaxFitGym.IRepository;
 using MaxFitGym.Models.RequestModel;
 using MaxFitGym.Models.ResponseModel;
 using Microsoft.Data.Sqlite;
@@ -72,7 +73,35 @@ namespace MaxFitGym.Repository
             return PaymentList;
         }
 
-       
+        
+        public PaymentResponseDTO GetPaymentsByMemberId(Int64 memberId)
+        {
+            using (var connection = new SqliteConnection(_connectionString))
+            {
+                connection.Open();
+                var command = connection.CreateCommand();
+                command.CommandText = "SELECT * FROM Payments WHERE MemberId == @memberId";
+                command.Parameters.AddWithValue("@memberId", memberId);
+                using (var reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        return new PaymentResponseDTO()
+                        {
+                            Id = reader.GetInt32(0),
+                            MemberId = reader.GetInt64(1),
+                            PaidDate = reader.GetDateTime(2),
+                            Amount = reader.GetInt64(3),
+                        };
+                    }
+                    else
+                    {
+                        throw new Exception(" No Such Payments Process!");
+                    }
+                };
+            };
+            return null;
+        }
 
     }
 }

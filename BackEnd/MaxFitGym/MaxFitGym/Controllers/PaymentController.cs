@@ -34,5 +34,20 @@ namespace MaxFitGym.Controllers
             return Ok(PaymentList);
         }
 
+        [HttpGet("Get-Payment-By-ID/{memberId}")]
+        public IActionResult GetPaymentsByMemberId(Int64 memberId)
+        {
+            try
+            {
+                var Payment = _paymentRepository.GetPaymentsByMemberId(memberId);
+                return Ok(Payment);
+            }
+
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
     }
 }
