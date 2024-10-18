@@ -22,6 +22,7 @@ namespace MaxFitGym
             builder.Services.AddSingleton<IProgramRepository>(provider => new ProgramRepository(connectionString));
             builder.Services.AddSingleton<IMemberRepository>(provider => new MemberRepository(connectionString));
             builder.Services.AddSingleton<IEnrollmentRepository>(provider => new EnrollmentRepository(connectionString));
+            builder.Services.AddSingleton<IPaymentRepository>(provider => new PaymentRepository(connectionString));
 
 
             //Initialize The Database

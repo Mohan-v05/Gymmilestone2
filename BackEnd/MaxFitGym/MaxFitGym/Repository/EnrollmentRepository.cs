@@ -9,13 +9,13 @@ namespace MaxFitGym.Repository
     public class EnrollmentRepository : IEnrollmentRepository
     {
         private readonly string _connectionString;
-        private readonly IProgramRepository _programRepository;
+        
 
         public EnrollmentRepository(string connectionString)
         {
             _connectionString = connectionString;
         }
-
+        
         public EnrollmentResponseDTO AddEnrollment(EnrollmentRequestDTO enrollmentRequestDTO)
         {
             using (var connection = new SqliteConnection(_connectionString))
@@ -68,12 +68,12 @@ namespace MaxFitGym.Repository
                         });
                     }
                 }
-                
+
             }
             return EnrollmentsList;
         }
 
-        public EnrollmentResponseDTO GetEnrollmentById(Int64 Id )
+        public EnrollmentResponseDTO GetEnrollmentById(Int64 Id)
 
         {
             using (var connection = new SqliteConnection(_connectionString))
@@ -114,9 +114,9 @@ namespace MaxFitGym.Repository
                 command.ExecuteNonQuery();
             }
         }
-        public List<EntrolledProgramsResponseDTO> GetEntrolledProgramsByMemberId(Int64 Id)
+        public List<long> GetEntrolledProgramsByMemberId(Int64 Id)
         {
-            List<EntrolledProgramsResponseDTO> ListOfEntrolledProgrms = new List<EntrolledProgramsResponseDTO>();
+            List<Int64> programsIds = new List<Int64>();
             using (var connection = new SqliteConnection(_connectionString))
             {
                 connection.Open();
@@ -124,29 +124,21 @@ namespace MaxFitGym.Repository
                 command.CommandText = "Select ProgramId From Enrollment Where MemberId = @Id";
                 command.Parameters.AddWithValue("@Id", Id);
 
-               
+
 
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
                     {
                         var id = reader.GetInt64(0);
-                        var programs = _programRepository.GetProgramById(id);
-                        var EntrolledProgramsResponseDTO=new EntrolledProgramsResponseDTO();
-                        
-                        EntrolledProgramsResponseDTO.Id = programs.Id;
-                        EntrolledProgramsResponseDTO.ProgramName =programs.ProgramName;
-                        EntrolledProgramsResponseDTO.type=programs.type;
-                        EntrolledProgramsResponseDTO.TotalFee =programs.TotalFee;
-
-                        ListOfEntrolledProgrms.Add(EntrolledProgramsResponseDTO);
-
+                      
+                        programsIds.Add(id);
                     }
-                }
 
-                command.ExecuteNonQuery();
+                   
+                }
+                return programsIds;
             }
-            return ListOfEntrolledProgrms;
         }
     }
 }

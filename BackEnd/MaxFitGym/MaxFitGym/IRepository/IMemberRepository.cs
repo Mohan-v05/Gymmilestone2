@@ -1,5 +1,4 @@
-﻿using MaxFitGym.Entities;
-using MaxFitGym.Models.RequestModel;
+﻿using MaxFitGym.Models.RequestModel;
 using MaxFitGym.Models.ResponseModel;
 
 namespace MaxFitGym.IRepository
