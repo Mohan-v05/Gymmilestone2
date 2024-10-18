@@ -179,4 +179,17 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 })
+function searchProgram() {
+    const searchTerm = document.getElementById('searchBar').value.toLowerCase();
+    const rows = document.querySelectorAll('#programTable tbody tr');
 
+    rows.forEach(row => {
+        const memberName = row.querySelector('td:nth-child(2)').innerText.toLowerCase();
+        const memberId = row.querySelector('td:nth-child(1)').innerText.toLowerCase();
+        if (memberName.includes(searchTerm) || memberId.includes(searchTerm)) {
+            row.style.display = '';
+        } else {
+            row.style.display = 'none';
+        }
+    });
+}

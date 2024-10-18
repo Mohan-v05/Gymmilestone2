@@ -1,0 +1,288 @@
+[
+  {
+    "ContainingType": "MaxFitGym.Controllers.EntrollmentController",
+    "Method": "AddEnrollment",
+    "RelativePath": "api/Entrollment/Add-Enrollment",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "memberId",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "programId",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "EnrollDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MaxFitGym.Controllers.EntrollmentController",
+    "Method": "DeleteEnrollment",
+    "RelativePath": "api/Entrollment/Delete-Enrollment/{Id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MaxFitGym.Controllers.EntrollmentController",
+    "Method": "GetAllEnrollments",
+    "RelativePath": "api/Entrollment/Get-All-Enrollment",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MaxFitGym.Controllers.EntrollmentController",
+    "Method": "GetEnrollmentById",
+    "RelativePath": "api/Entrollment/Get-Enrollment-By-ID/{Id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int64",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MaxFitGym.Controllers.MemberController",
+    "Method": "AddMembers",
+    "RelativePath": "api/Member/Add-Member",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "memberRegister",
+        "Type": "MaxFitGym.Models.RequestModel.MemberRegisterRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MaxFitGym.Controllers.MemberController",
+    "Method": "DeleteMembers",
+    "RelativePath": "api/Member/Delete-Member/{memberId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "memberId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MaxFitGym.Controllers.MemberController",
+    "Method": "GetAllMembers",
+    "RelativePath": "api/Member/Get-All-Members",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MaxFitGym.Controllers.MemberController",
+    "Method": "GetmemberById",
+    "RelativePath": "api/Member/Get-Member-By-ID/{MemberID}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "MemberID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MaxFitGym.Controllers.MemberController",
+    "Method": "UpdateMember",
+    "RelativePath": "api/Member/Update-Member/{memberId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "memberId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "FirstName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "LastName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "DOB",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "ContactNumber",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Address",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Age",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Gender",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Height",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Weight",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Membershiptype",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "fee",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MaxFitGym.Controllers.ProgramController",
+    "Method": "AddProgram",
+    "RelativePath": "api/Program/Add-program",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "programDTO",
+        "Type": "MaxFitGym.Models.ProgramDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MaxFitGym.Controllers.ProgramController",
+    "Method": "DeleteProgram",
+    "RelativePath": "api/Program/Delete-Program/{ProgramId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ProgramId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MaxFitGym.Controllers.ProgramController",
+    "Method": "GetAllCourses",
+    "RelativePath": "api/Program/Get-All-Programs",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MaxFitGym.Controllers.ProgramController",
+    "Method": "GetProgramById",
+    "RelativePath": "api/Program/Get-Progr-By-ID/{programId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "programId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MaxFitGym.Controllers.ProgramController",
+    "Method": "UpdateProgram",
+    "RelativePath": "api/Program/Update-Program/{ProgramID}/{TotalFee}/{NewName}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ProgramID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "TotalFee",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "NewName",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

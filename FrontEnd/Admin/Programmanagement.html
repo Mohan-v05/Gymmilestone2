@@ -55,33 +55,23 @@
 
         .modal {
             display: none;
-            /* Hidden by default */
             position: fixed;
-            /* Stay in place */
             z-index: 1;
-            /* Sit on top */
             left: 0;
             top: 0;
             width: 100%;
-            /* Full width */
             height: 100%;
-            /* Full height */
             overflow: auto;
-            /* Enable scroll if needed */
             background-color: rgb(0, 0, 0);
-            /* Fallback color */
             background-color: rgba(0, 0, 0, 0.4);
-            /* Black w/ opacity */
         }
 
         .modal-content {
             background-color: #fefefe;
             margin: 15% auto;
-            /* 15% from the top and centered */
             padding: 20px;
             border: 1px solid #888;
             width: 80%;
-            /* Could be more or less, depending on screen size */
         }
 
         .close {
@@ -97,16 +87,15 @@
             text-decoration: none;
             cursor: pointer;
         }
-        
     </style>
 </head>
 
 <body>
     <h1>Program Table</h1>
+    <input type="text" id="searchBar" placeholder="Search Member..." onkeyup="searchProgram()">
 
-    <input type="text" id="searchBox" placeholder="Search by Program ID" />
-    <button id="searchButton" class="button">Search</button>
     <button id="addProgramButton" class="button">Add Program</button>
+    <button id="goHome" class="button">Go Home</button>
 
     <table id="programTable">
         <thead>
@@ -123,35 +112,33 @@
         </tbody>
     </table>
 
-    <button id="goHome" class="button">Go Home</button>
+    <div id="programModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h1>Update Program</h1>
+            <form id="programregistrationForm">
+                <label for="pname">Program Name :</label>
+                <input type="text" id="pname" name="pname" required><br>
+
+                <label for="fees">Fees (per month):</label>
+                <input type="text" id="fees" name="fees"><br>
+
+                <div style="display:flex;">
+                    <label for="type">Type :</label><br>
+
+                    <input type="radio" id="weight" name="type" value="weight" required>
+                    <label for="weight">Weight</label><br>
+                    <input type="radio" id="cardio" name="type" value="cardio" required>
+                    <label for="cardio">Cardio</label><br>
+                </div>
+
+                <button type="button" id="updateBtn">Update</button>
+                <button type="button" id="goHome">Go Home</button>
+            </form>
+        </div>
+    </div>
 
     <script src="Programmanagement.js"></script>
 </body>
 
 </html>
-
-<div id="programModal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <h1>Update Program</h1>
-        <form id="programregistrationForm">
-            <label for="pname">Program Name :</label>
-            <input type="text" id="pname" name="pname" required><br>
-
-            <label for="fees">Fees (per month):</label>
-            <input type="text" id="fees" name="fees"><br>
-
-            <div style="display:flex;">
-                <label for="type">Type :</label><br>
-
-                <input type="radio" id="weight" name="type" value="weight" required>
-                <label for="weight">Weight</label><br>
-                <input type="radio" id="cardio" name="type" value="cardio" required>
-                <label for="cardio">Cardio</label><br>
-            </div>
-
-            <button type="button" id="updateBtn">Update</button>
-            <button type="button" id="goHome">Go Home</button>
-        </form>
-    </div>
-</div>
