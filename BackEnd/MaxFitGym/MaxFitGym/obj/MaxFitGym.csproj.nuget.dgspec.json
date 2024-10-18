@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\UT01146\\Desktop\\GYM payments\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\MaxFitGym.csproj": {}
+    "C:\\Users\\Nela\\Desktop\\New folder\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\MaxFitGym.csproj": {}
   },
   "projects": {
-    "C:\\Users\\UT01146\\Desktop\\GYM payments\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\MaxFitGym.csproj": {
+    "C:\\Users\\Nela\\Desktop\\New folder\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\MaxFitGym.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\UT01146\\Desktop\\GYM payments\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\MaxFitGym.csproj",
+        "projectUniqueName": "C:\\Users\\Nela\\Desktop\\New folder\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\MaxFitGym.csproj",
         "projectName": "MaxFitGym",
-        "projectPath": "C:\\Users\\UT01146\\Desktop\\GYM payments\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\MaxFitGym.csproj",
-        "packagesPath": "C:\\Users\\UT01146\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\UT01146\\Desktop\\GYM payments\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\obj\\",
+        "projectPath": "C:\\Users\\Nela\\Desktop\\New folder\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\MaxFitGym.csproj",
+        "packagesPath": "C:\\Users\\Nela\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Nela\\Desktop\\New folder\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\UT01146\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Nela\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -74,7 +74,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
