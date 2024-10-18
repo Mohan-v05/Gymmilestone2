@@ -1,17 +1,22 @@
 document.addEventListener('DOMContentLoaded', function () {
+    const searchInput = document.querySelector('.searchbar input');
+    const searchButton = document.querySelector('.searchbtn img');
+    const formContainer = document.getElementById('form-container');
+
     // Retrieve data from local storage
     const allUsersData = JSON.parse(localStorage.getItem('allUsersData')) || [];
     const allProgramsData = JSON.parse(localStorage.getItem('allProgramsData')) || [];
 
-    const searchInput = document.querySelector('.searchbar input');
-    const searchButton = document.querySelector('.searchbtn img');
-    const formContainer = document.getElementById('form-container');
-    const MembersCount = document.getElementById("MembersCount");
-    const ProgramCount = document.getElementById("ProgramCount");
-    MembersCount.innerHTML = allUsersData.length;
-    ProgramCount.innerHTML = allProgramsData.length;
+    // Update card numbers dynamically
+    const dataCounts = {
+        allUsersData: allUsersData.length,
+        allProgramsData: allProgramsData.length
+    };
 
-
+    document.querySelectorAll('.cardBox .card').forEach((card, index) => {
+        const keys = ["allUsersData", "allProgramsData"];
+        card.querySelector('.numbers').textContent = dataCounts[keys[index]];
+    });
 
     // Program distribution for pie chart
     const programCounts = {};

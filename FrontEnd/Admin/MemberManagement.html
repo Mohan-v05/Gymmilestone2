@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,19 +11,27 @@
             width: 100%;
             border-collapse: collapse;
         }
-        table, th, td {
+
+        table,
+        th,
+        td {
             border: 1px solid black;
         }
-        th, td {
+
+        th,
+        td {
             padding: 8px;
             text-align: left;
         }
+
         th {
             background-color: #f2f2f2;
         }
+
         h1 {
             color: #c21807;
         }
+
         .button {
             margin: 5px;
             padding: 10px 15px;
@@ -31,21 +40,24 @@
             color: white;
             cursor: pointer;
         }
+
         .button:hover {
             background-color: #c21807;
         }
-        .edit-button, .delete-button {
+
+        .edit-button,
+        .delete-button {
             margin: 0 5px;
             cursor: pointer;
         }
     </style>
 </head>
+
 <body>
     <h1>Member Data Table</h1>
-    
-    <input type="text" id="searchBox" placeholder="Search by Gym ID" />
-    <button id="searchButton" class="button">Search</button>
+    <input type="text" id="searchBar" placeholder="Search Member..." onkeyup="searchMembers()">
     <button id="addNewMember" class="button">Add New Member</button>
+    <button id="goHome" class="button">Go Home</button>
     
     <table id="membersTable">
         <thead>
@@ -68,9 +80,8 @@
             <!-- Data will be populated here -->
         </tbody>
     </table>
-    
-    <button id="goHome" class="button">Go Home</button>
 
     <script src="Membermanagement.js"></script>
 </body>
+
 </html>

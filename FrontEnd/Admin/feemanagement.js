@@ -1,10 +1,32 @@
 document.addEventListener('DOMContentLoaded', function () {
     const tableBody = document.querySelector('#feesTable tbody');
-    const searchBox = document.getElementById('searchBox');
-    const searchButton = document.getElementById('searchButton');
+    const allMembers = document.getElementById('allMembers');
     const filterByAnnual = document.getElementById('filterAnnual');
     const filterByMonthly = document.getElementById('filterMonthly');
     const goHomeButton = document.getElementById('goHome');
+
+    // Modal elements
+    const paymentModal = document.getElementById('paymentModal');
+    const closeModalButton = document.getElementById('closeModal');
+    const confirmPaymentButton = document.getElementById('confirmPayment');
+
+    const API_URL = 'http://localhost:5297/api/Member/Get-All-Members';
+
+    // Function to fetch user data from the API
+    async function fetchUserData() {
+        try {
+            const response = await fetch(API_URL);
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+            console.log('Fetched data:', data); // Log the fetched data
+            return data;
+        } catch (error) {
+            console.error('There was a problem with the fetch operation:', error);
+            return [];
+        }
+    }
 
     // Function to format date to YYYY-MM-DD
     function formatDate(date) {
@@ -25,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
             return 'N/A';
         }
 
-        return validTillDateObj.toISOString().split('T')[0]; // Return date in YYYY-MM-DD format
+        return validTillDateObj.toISOString().split('T')[0];
     }
 
     // Function to check if the "Valid Till" date has expired
@@ -37,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Function to render the table with data
     function renderTable(data) {
-        tableBody.innerHTML = ''; // Clear the table body
+        tableBody.innerHTML = '';
 
         if (data.length === 0) {
             tableBody.innerHTML = '<tr><td colspan="10">No data found</td></tr>';
@@ -51,7 +73,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
             const row = document.createElement('tr');
 
-            // Determine if the Pay button should be red and if the Notify button should be visible
             const isPayButtonRed = validTill !== 'N/A' && isExpired(validTill);
             const notifyButtonDisplay = isPayButtonRed ? 'inline-block' : 'none';
 
@@ -62,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <td>${user.phone}</td>
                 <td>${user.training.join(', ')}</td>
                 <td>${paymentType}</td>
-                <td>${user.monthlyFees ? user.monthlyFees : user.annualFees ? user.annualFees : 'N/A'}</td>
+                <td>${user.monthlyFees || user.annualFees || 'N/A'}</td>
                 <td>${paidDate}</td>
                 <td>${validTill}</td>
                 <td>
@@ -77,9 +98,9 @@ document.addEventListener('DOMContentLoaded', function () {
         attachEventListeners();
     }
 
-    // Function to attach event listeners to pay and notify buttons
+    // Attach event listeners to pay and notify buttons
     function attachEventListeners() {
-        document.querySelectorAll('.pay').forEach(button => {
+        document.querySelectorAll('.pays').forEach(button => {
             button.addEventListener('click', handlePay);
         });
         document.querySelectorAll('.notify').forEach(button => {
@@ -87,70 +108,103 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    function handlePay(event) {
+    async function handlePay(event) {
         const gymId = event.target.dataset.id;
-        const allUsersData = JSON.parse(localStorage.getItem('allUsersData')) || [];
+        const allUsersData = await fetchUserData();
         const user = allUsersData.find(u => u.gymId == gymId);
+
         if (user) {
-            // Redirect to the registration form with user data for editing
-            localStorage.setItem('editUserData', JSON.stringify(user));
-            window.location.href = 'Addnewmember.html'; // Change to your registration page URL
+            document.getElementById('memberId').innerText = user.gymId;
+            document.getElementById('memberName').innerText = user.name;
+            document.getElementById('memberTraining').innerText = user.training.join(', ');
+            document.getElementById('totalPayment').innerText = user.monthlyFees || user.annualFees;
+
+            paymentModal.style.display = 'block';
         }
     }
 
-    function handleNotify(event) {
-        const gymId = event.target.dataset.id;
-        let allUsersData = JSON.parse(localStorage.getItem('allUsersData')) || [];
+    closeModalButton.addEventListener('click', function () {
+        paymentModal.style.display = 'none';
+    });
 
-        // Find the user to notify
+    confirmPaymentButton.addEventListener('click', async function () {
+        const gymId = document.getElementById('memberId').innerText;
+        const allUsersData = await fetchUserData();
         const user = allUsersData.find(u => u.gymId == gymId);
 
         if (user) {
-            // Create a notification message
-            const notificationMessage = `Remainder!!! ${user.gymId}-- ${user.name}-- Please pay your overdue payments`;
+            user.date = new Date().toISOString();
 
-            // Log the notification message
-            console.log(notificationMessage);
-
-            // Store notification in localStorage
-            let userNotifications = JSON.parse(localStorage.getItem('Notifications')) || [];
-            userNotifications.push({
-                gymId: user.gymId,
-                message: notificationMessage,
-                date: new Date().toISOString()
+            await fetch(`${API_URL}/${gymId}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(user)
             });
-            localStorage.setItem('Notifications', JSON.stringify(userNotifications));
 
-            // Alert the user about the notification
+            const payButton = document.querySelector(`.pays[data-id="${gymId}"]`);
+            payButton.style.backgroundColor = '#00FF00';
+
+            alert('Payment confirmed for ' + document.getElementById('memberName').innerText);
+            paymentModal.style.display = 'none';
+
+            renderTable(await fetchUserData());
+        }
+    });
+
+    async function handleNotify(event) {
+        const gymId = event.target.dataset.id;
+        const allUsersData = await fetchUserData();
+        
+        const user = allUsersData.find(u => u.gymId == gymId);
+
+        if (user) {
+            const notificationMessage = `Reminder!!! ${user.gymId}: please pay`;
+            console.log(notificationMessage);
             alert(`Notification sent to ${user.name} (Gym ID: ${user.gymId})`);
         }
-
-
     }
 
-    function handleSearch() {
-        const query = searchBox.value.trim();
-        const allUsersData = JSON.parse(localStorage.getItem('allUsersData')) || [];
-        const filteredData = allUsersData.filter(u => u.gymId.toString().includes(query));
-        renderTable(filteredData);
+    async function handleFilter(filterType) {
+        const allUsersData = await fetchUserData();
+        if (filterType === '') {
+            renderTable(allUsersData);
+        } else {
+            const filteredData = allUsersData.filter(u => {
+                return filterType === 'Annual' ? u.annualFees : u.monthlyFees;
+            });
+            renderTable(filteredData);
+        }
     }
 
-    function handleFilter(filterType) {
-        const allUsersData = JSON.parse(localStorage.getItem('allUsersData')) || [];
-        const filteredData = allUsersData.filter(u => {
-            return filterType === 'Annual' ? u.annualFees : u.monthlyFees;
-        });
-        renderTable(filteredData);
-    }
-
-    searchButton.addEventListener('click', handleSearch);
+    allMembers.addEventListener('click', () => handleFilter(''));
     filterByAnnual.addEventListener('click', () => handleFilter('Annual'));
     filterByMonthly.addEventListener('click', () => handleFilter('Monthly'));
 
     goHomeButton.addEventListener('click', function () {
-        window.location.href = 'Adminhome.html'; // Change 'Adminhome.html' to your home page URL
+        window.location.href = 'Adminhome.html';
     });
 
     // Initial render of the table with all users data
-    renderTable(JSON.parse(localStorage.getItem('allUsersData')) || []);
+    (async () => {
+        const data = await fetchUserData();
+        renderTable(data);
+    })();
 });
+
+// Search function
+function searchMembers() {
+    const searchTerm = document.getElementById('searchBar').value.toLowerCase();
+    const rows = document.querySelectorAll('#feesTable tbody tr');
+
+    rows.forEach(row => {
+        const memberName = row.querySelector('td:nth-child(2)').innerText.toLowerCase();
+        const memberId = row.querySelector('td:nth-child(1)').innerText.toLowerCase();
+        if (memberName.includes(searchTerm) || memberId.includes(searchTerm)) {
+            row.style.display = '';
+        } else {
+            row.style.display = 'none';
+        }
+    });
+}
