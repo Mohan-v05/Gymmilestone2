@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const allUsersData_apiUrl ='http://localhost:5297/api/Member/Get-All-Members';
     const updateUser_URl='http://localhost:5297/api/Member/Update-Member/1';
     const getUser_By_Id= 'http://localhost:5297/api/Member/Get-Member-By-ID/1';
-    const delete_By_ID='http://localhost:5297/api/Member/Delete-Member/1';
+    const deleteMemberById_url='http://localhost:5297/api/Member/Delete-Member';
 
 
     let Members = [];
@@ -74,6 +74,41 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
     GetAllMembers();
+
+    async function deleteMemberById(id) {
+        console.log(id)
+        const deleteMemberById_url = "http://localhost:5297/api/Member/Delete-Member";
+
+        const response = await fetch(`${deleteMemberById_url}/${id}`, { method: 'DELETE' });
+        if (response.ok) {
+            console.log(response)
+        }
+    }
+
+     // Delete button click event
+     tableBody.addEventListener('click', function (event) {
+        if (event.target.classList.contains('delete-button')) {
+            const memberId = parseInt(event.target.dataset.id);
+            console.log(event.target)
+            const confirmed = confirm('Are you sure you want to delete this program?');
+
+            if (confirmed) {
+
+                try {
+
+                    deleteMemberById(memberId)
+                    let removerow = document.getElementById(memberId);
+                    alert('Member deleted successfully!');
+                    window.location.reload();
+
+                } catch (error) {
+                    alert('Member not found!');
+                }
+            }
+        }
+    });
+
+    
     
 
 
@@ -132,18 +167,3 @@ document.addEventListener('DOMContentLoaded', function () {
 
    // renderTable(); // Call to render the table with fetched data
 });
-
-function searchMembers() {
-    const searchTerm = document.getElementById('searchBar').value.toLowerCase();
-    const rows = document.querySelectorAll('#membersTable tbody tr');
-
-    rows.forEach(row => {
-        const memberName = row.querySelector('td:nth-child(2)').innerText.toLowerCase();
-        const memberId = row.querySelector('td:nth-child(1)').innerText.toLowerCase();
-        if (memberName.includes(searchTerm) || memberId.includes(searchTerm)) {
-            row.style.display = '';
-        } else {
-            row.style.display = 'none';
-        }
-    });
-}
