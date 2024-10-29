@@ -3,70 +3,181 @@ document.addEventListener('DOMContentLoaded', function () {
     const searchButton = document.querySelector('.searchbtn img');
     const formContainer = document.getElementById('form-container');
 
-    // Retrieve data from local storage
-    const allUsersData = JSON.parse(localStorage.getItem('allUsersData')) || [];
-    const allProgramsData = JSON.parse(localStorage.getItem('allProgramsData')) || [];
+    const getMemberById_url = "http://localhost:5297/api/Member/Get-Member-By-ID";
 
-    // Update card numbers dynamically
-    const dataCounts = {
-        allUsersData: allUsersData.length,
-        allProgramsData: allProgramsData.length
-    };
+    const getAllMembers_url = "http://localhost:5297/api/Member/Get-All-Members";
+    const getAllPrograms_url = "http://localhost:5297/api/Program/Get-All-Programs";
+    const getPayments = "http://localhost:5297/api/Payment/Get-All-Payment";
 
-    document.querySelectorAll('.cardBox .card').forEach((card, index) => {
-        const keys = ["allUsersData", "allProgramsData"];
-        card.querySelector('.numbers').textContent = dataCounts[keys[index]];
-    });
+    let allMembers = [];
+    let Programs = [];
+    let Payments = [];
 
-    // Program distribution for pie chart
-    const programCounts = {};
-    allProgramsData.forEach(program => {
-        const count = allUsersData.filter(member => member.training.includes(program.name)).length;
-        programCounts[program.name] = count;
-    });
-
-    const ctxPie = document.getElementById('programPieChart').getContext('2d');
-    new Chart(ctxPie, {
-        type: 'pie',
-        data: {
-            labels: Object.keys(programCounts),
-            datasets: [{
-                label: 'Program Distribution',
-                data: Object.values(programCounts),
-                backgroundColor: ['#36A2EB', '#FF6384', '#FFCE56', '#4BC0C0'],
-            }]
-        },
-        options: {
-            responsive: true
+    // Function to fetch all user data from an API
+    async function fetchAllUsersData() {
+        try {
+            const response = await fetch(getAllMembers_url);
+            if (!response.ok) {
+                throw new Error('Failed to fetch member data');
+            }
+            allMembers = await response.json();
+            getcount(allMembers)
+            return allMembers;
+        } catch (error) {
+            console.error('There was a problem with the fetch operation:', error);
+            return [];
         }
-    });
+    }
 
-    // Gender distribution for bar chart
-    const genderCounts = {
-        Male: allUsersData.filter(member => member.gender === 'male').length,
-        Female: allUsersData.filter(member => member.gender === 'female').length
-    };
+    // Function to fetch all program data from an API
+    async function fetchAllProgramsData() {
+        try {
+            const response = await fetch(getAllPrograms_url);
+            if (!response.ok) {
+                throw new Error('Failed to fetch program data');
+            }
+            Programs = await response.json();
+            console.log(Programs);
+           // allPrograms(Programs)
+            return Programs;
+        } catch (error) {
+            console.error(error.message);
+            return [];
+        }
+    }
 
-    const ctxBar = document.getElementById('genderBarChart').getContext('2d');
-    new Chart(ctxBar, {
-        type: 'bar',
-        data: {
-            labels: ['Male', 'Female'],
-            datasets: [{
-                label: 'Number of Members',
-                data: [genderCounts.Male, genderCounts.Female],
-                backgroundColor: ['#36A2EB', '#FF6384']
-            }]
-        },
-        options: {
-            responsive: true,
-            scales: {
-                y: {
-                    beginAtZero: true
+
+    async function fetchAllEnrollmentData() {
+        try {
+            const response = await fetch(`http://localhost:5297/api/Entrollment/Get-All-Enrollment`);
+            if (!response.ok) {
+                throw new Error('Failed to fetch program data');
+            }
+            Enrollments = await response.json();
+            console.log(Enrollments);
+           allPrograms(Enrollments)
+            return Enrollments;
+        } catch (error) {
+            console.error(error.message);
+            return [];
+        }
+    }
+
+
+    async function fetchAllPayments() {
+        try {
+            const response = await fetch(getPayments);
+            if (!response.ok) {
+                throw new Error('Failed to fetch program data');
+            }
+            Payments = await response.json();
+            return Payments;
+        } catch (error) {
+            console.error(error.message);
+            return [];
+        }
+    }
+    console.log(Payments);
+    // Main function to load data and update HTML
+    async function loadDataAndUpdateUI() {
+        // Fetch the data
+        await fetchAllUsersData();
+        await fetchAllProgramsData();
+        await fetchAllPayments();
+        await  fetchAllEnrollmentData();
+
+        // Update the card numbers dynamically
+        const dataCounts = {
+            allUsersDataCount: allMembers.length,
+            allProgramsDataCount: Programs.length,
+            allPaymentsDataCount: Payments.length
+
+        };
+
+        // Update the HTML elements with counts
+        document.querySelectorAll('.cardBox .card').forEach((card, index) => {
+            const keys = ["allUsersDataCount", "allProgramsDataCount", "allPaymentsDataCount"];
+            card.querySelector('.numbers').textContent = dataCounts[keys[index]];
+        });
+    }
+
+   
+
+    // Call the main function to load data and update the UI
+    loadDataAndUpdateUI();
+
+    function allPrograms(allProgramsData) {
+        const programCounts = {};
+        const programMapping = {
+            1: 'Program One',
+            2: 'Weight Lifitng',
+            3: 'Program Three',
+            4: 'Program Four'
+        };
+    
+        allProgramsData.forEach(enrollment => {
+            const programName = programMapping[enrollment.programId];
+            if (programName) {
+                if (!programCounts[programName]) {
+                    programCounts[programName] = 0;
+                }
+                programCounts[programName]++;
+            }
+        });
+    
+        const ctxPie = document.getElementById('programPieChart');
+        if (ctxPie) {
+            new Chart(ctxPie.getContext('2d'), {
+                type: 'pie',
+                data: {
+                    labels: Object.keys(programCounts),
+                    datasets: [{
+                        label: 'Program Distribution',
+                        data: Object.values(programCounts),
+                        backgroundColor: ['#36A2EB', '#FF6384', '#FFCE56', '#4BC0C0'],
+                    }]
+                },
+                options: {
+                    responsive: true
+                }
+            });
+        } else {
+            console.error('Element with id "programPieChart" not found.');
+        }
+    }
+    
+
+    function getcount(allUsersData)
+    {
+        const genderCounts = {
+            Male: allUsersData.filter(member => member.gender === 'male').length,
+            Female: allUsersData.filter(member => member.gender === 'female').length
+        };
+
+
+        const ctxBar = document.getElementById('genderBarChart').getContext('2d');
+        new Chart(ctxBar, {
+            type: 'bar',
+            data: {
+                labels: ['Male', 'Female'],
+                datasets: [{
+                    label: 'Number of Members',
+                    data: [genderCounts.Male, genderCounts.Female],
+                    backgroundColor: ['#36A2EB', '#FF6384']
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
                 }
             }
-        }
-    });
+        });
+    }
+       
+ 
 
     // Function to format date to YYYY-MM-DD
     function formatDate(date) {
@@ -93,30 +204,30 @@ document.addEventListener('DOMContentLoaded', function () {
     // Function to display member details in forms
     function displayMemberDetails(member) {
         // Fill personal details form
-        document.getElementById('name').value = member.name || '';
+        document.getElementById('name').value = member.firstName + " "+ member.lastName || '';
         document.getElementById('nic').value = member.nic || '';
         document.getElementById('address').value = member.address || '';
-        document.getElementById('phone').value = member.phone || '';
+        document.getElementById('phone').value = member.contactNumber || '';
         document.getElementById('gender').value = member.gender || '';
 
         // Fill course details form
-        document.getElementById('programid').value = member.gymId || '';
-        document.getElementById('programs').value = member.training.join(', ') || '';
+        // document.getElementById('programid').value = member.gymId || '';
+        // document.getElementById('programs').value = member.training.join(', ') || '';
 
-        // Fill payment details form
-        const paymentType = member.annualFees ? 'Annual' : 'Monthly';
-        document.getElementById('paytype').value = paymentType;
+        // // Fill payment details form
+        // const paymentType = member.annualFees ? 'Annual' : 'Monthly';
+        // document.getElementById('paytype').value = paymentType;
 
-        const fee = member.annualFees || member.monthlyFees;
-        document.getElementById('fee').value = fee ? fee + ' rupees' : 'Not applicable';
+        // const fee = member.annualFees || member.monthlyFees;
+        // document.getElementById('fee').value = fee ? fee + ' rupees' : 'Not applicable';
 
-        // Convert timestamp to date format
-        const paidDate = formatDate(member.date);
-        document.getElementById('joindate').value = paidDate;
+        // // Convert timestamp to date format
+        // const paidDate = formatDate(member.date);
+        // document.getElementById('joindate').value = paidDate;
 
-        // Calculate and set Paid Date and Valid Till
-        document.getElementById('lastpaid').value = paidDate;
-        document.getElementById('validtill').value = calculateValidTill(member.date, paymentType);
+        // // Calculate and set Paid Date and Valid Till
+        // document.getElementById('lastpaid').value = paidDate;
+        // document.getElementById('validtill').value = calculateValidTill(member.date, paymentType);
     }
 
     function displayIncomeReportDetails(member) {
@@ -138,17 +249,45 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
-    // Function to search member by ID
-    function searchMemberById(id) {
-        const allUsersData = JSON.parse(localStorage.getItem('allUsersData')) || [];
-        const member = allUsersData.find(user => user.gymId === parseInt(id));
 
-        if (member) {
-            displayMemberDetails(member);
-        } else {
-            formContainer.innerHTML = `<p>No member found with Gym ID: ${id}</p>`;
+    // Function to search member by ID
+    async function searchMemberById(id) {
+        try {
+            // Fetch data from the API
+            const response = await fetch(getAllMembers_url);
+            if (!response.ok) {
+                throw new Error(`Failed to fetch member data: ${response.status} ${response.statusText}`);
+            }
+
+            // Parse the JSON data
+            const allUsersData = await response.json();
+            console.log("Fetched data:", allUsersData);
+
+            // Verify if allUsersData is an array
+            if (!Array.isArray(allUsersData)) {
+                throw new Error("Fetched data is not an array");
+            }
+
+            // Find the member by gymId
+            const member = allUsersData.find(user => user.id === parseInt(id));
+            console.log("Member found:", member);
+
+            // Display the member's details or show a "not found" message
+            if (member) {
+                const response1=await fetch(`http://localhost:5297/api/Entrollment/Get-Entrolled-Programs-By-MemberId/${id}`);
+              
+                
+                displayMemberDetails(member);
+            } else {
+                formContainer.innerHTML = `<p>No member found with Gym ID: ${id}</p>`;
+            }
+        } catch (error) {
+            console.error("Error retrieving data:", error);
+            formContainer.innerHTML = `<p>Error retrieving member data.</p>`;
         }
     }
+
+
 
     // Event listener for the search button
     searchButton.addEventListener('click', function () {

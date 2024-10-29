@@ -1,27 +1,28 @@
 document.addEventListener('DOMContentLoaded', function () {
     const tableBody = document.querySelector('#membersTable tbody');
-    const searchBox = document.getElementById('searchBox');
+    // const searchBox = document.getElementById('searchBox');
     const searchButton = document.getElementById('searchButton');
     const addNewMemberButton = document.getElementById('addNewMember');
     const goHomeButton = document.getElementById('goHome');
 
-    const allUsersData_apiUrl ='http://localhost:5297/api/Member/Get-All-Members';
-    const updateUser_URl='http://localhost:5297/api/Member/Update-Member/1';
-    const getUser_By_Id= 'http://localhost:5297/api/Member/Get-Member-By-ID/1';
-    const deleteMemberById_url='http://localhost:5297/api/Member/Delete-Member';
+    const allUsersData_apiUrl = 'http://localhost:5297/api/Member/Get-All-Members';
+    const updateUser_URl = 'http://localhost:5297/api/Member/Update-Member/1';
+    const getUser_By_Id = 'http://localhost:5297/api/Member/Get-Member-By-ID/1';
+    const deleteMemberById_url = 'http://localhost:5297/api/Member/Delete-Member';
+    const putMembers = "http://localhost:5297/api/Member/Update-Member";
 
 
     let Members = [];
-  
-    //     // Attach event listeners for edit and delete buttons
-    //     document.querySelectorAll('.edit-button').forEach(button => {
-    //         button.addEventListener('click', handleEdit);
-    //     });
-    //     document.querySelectorAll('.delete-button').forEach(button => {
-    //         button.addEventListener('click', handleDelete);
-    //     });
-    // }
-   
+
+    // Attach event listeners for edit and delete buttons
+    document.querySelectorAll('.edit-button').forEach(button => {
+        button.addEventListener('click', handleEdit);
+    });
+    document.querySelectorAll('.delete-button').forEach(button => {
+        button.addEventListener('click', handleDelete);
+    });
+
+
 
     // Fetch Programs Data from Database and Render Them
     async function GetAllMembers() {
@@ -31,10 +32,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 throw new Error('Network response was not ok');
             }
             Members = await response.json()
-            
+
             console.log(Members.result);
-           
-           
+
+
             // Render programs in the table
             if (!tableBody) {
                 console.error('Table body not found!');
@@ -42,8 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             tableBody.innerHTML = '';
-            console.log("Hi") ;// Clear existing rows
-            MembersArray=Members.result;
+            MembersArray = Members;
             MembersArray.forEach(member => {
                 const row = document.createElement('tr');
                 row.setAttribute('id', member.id); // Use program.id directly
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     <td>${member.membershiptype}</td>
                    
                     <td>
-                        <button class="edit-button" id="openModal" style="background-color: #c9bfaf;" data-id="${member.id}">Edit</button>
+                        <button class="edit-button" id="openModal" style="background-color: #c9bfaf;" onClick="handleEdit(${member.id})" data-id="${member.id}">Edit</button>
                         <button  class="delete-button" style="background-color: #ed7272;" data-id="${member.id}">Delete</button>
                     </td>
                 `;
@@ -85,8 +85,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-     // Delete button click event
-     tableBody.addEventListener('click', function (event) {
+    // Delete button click event
+    tableBody.addEventListener('click', function (event) {
         if (event.target.classList.contains('delete-button')) {
             const memberId = parseInt(event.target.dataset.id);
             console.log(event.target)
@@ -106,44 +106,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
         }
+        if (event.target.classList.contains('edit-button')) {
+            const memberId = parseInt(event.target.dataset.id);
+            handleEdit(memberId)
+        }
     });
 
-    
-    
-
-
-    function handleEdit(event) {
-        const gymId = event.target.dataset.id;
+    function handleEdit(id) {
+        const gymId = id.target.dataset.id;
         fetchData().then(allUsersData => {
             const user = allUsersData.find(u => u.gymId == gymId);
             if (user) {
-                localStorage.setItem('editUserData', JSON.stringify(user));
                 window.location.href = 'Updatemember.html';
             }
-        });
-    }
-
-    
-
-    function handleDelete(event) {
-        const gymId = event.target.dataset.id;
-        fetchData().then(allUsersData => {
-            let userNotifications = JSON.parse(localStorage.getItem('Notifications')) || [];
-            userNotifications.push(gymId);
-
-            localStorage.setItem('Notifications', JSON.stringify(userNotifications));
-            const updatedUsersData = allUsersData.filter(u => u.gymId != gymId);
-            // You can save the updated data back to a JSON file if needed
-            // But normally, you wouldn't save it back to a file in a client-side app
-            renderTable(updatedUsersData);
-        });
-    }
-
-    function handleSearch() {
-        const query = searchBox.value.trim();
-        fetchData().then(allUsersData => {
-            const filteredData = allUsersData.filter(u => u.gymId == query);
-            renderTable(filteredData);
         });
     }
 
@@ -165,5 +140,19 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-   // renderTable(); // Call to render the table with fetched data
+    // renderTable(); // Call to render the table with fetched data
 });
+function searchMembers() {
+    const searchTerm = document.getElementById('searchBar').value.toLowerCase();
+    const rows = document.querySelectorAll('#membersTable tbody tr');
+
+    rows.forEach(row => {
+        const memberName = row.querySelector('td:nth-child(2)').innerText.toLowerCase();
+        const memberId = row.querySelector('td:nth-child(1)').innerText.toLowerCase();
+        if (memberName.includes(searchTerm) || memberId.includes(searchTerm)) {
+            row.style.display = '';
+        } else {
+            row.style.display = 'none';
+        }
+    });
+}

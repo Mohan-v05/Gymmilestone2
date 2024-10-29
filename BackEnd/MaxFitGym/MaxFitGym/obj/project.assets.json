@@ -746,11 +746,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\UT01360\\Desktop\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\MaxFitGym.csproj",
+      "projectUniqueName": "C:\\Users\\UT01360\\Desktop\\Gym_M2_U_28.10\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\MaxFitGym.csproj",
       "projectName": "MaxFitGym",
-      "projectPath": "C:\\Users\\UT01360\\Desktop\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\MaxFitGym.csproj",
+      "projectPath": "C:\\Users\\UT01360\\Desktop\\Gym_M2_U_28.10\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\MaxFitGym.csproj",
       "packagesPath": "C:\\Users\\UT01360\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\UT01360\\Desktop\\New folder\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\obj\\",
+      "outputPath": "C:\\Users\\UT01360\\Desktop\\Gym_M2_U_28.10\\Gymmilestone2\\BackEnd\\MaxFitGym\\MaxFitGym\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\UT01360\\AppData\\Roaming\\NuGet\\NuGet.Config",

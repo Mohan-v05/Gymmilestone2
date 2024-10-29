@@ -39,7 +39,7 @@ namespace MaxFitGym.Controllers
 
         //Get All Members
         [HttpGet("Get-All-Members")]
-        public async Task<IActionResult> GetAllMembers()
+        public IActionResult GetAllMembers()
         {
             var MembersList = _memberRepository.GetAllMembers();
             return Ok(MembersList);
@@ -74,7 +74,7 @@ namespace MaxFitGym.Controllers
 
 
         [HttpPut("Update-Member/{memberId}")]
-        public IActionResult UpdateMember(int memberId, [FromForm]MemberUpdateRequestDTO memberUpdate)
+        public IActionResult UpdateMember(int memberId, MemberUpdateRequestDTO memberUpdate)
         {
             _memberRepository.UpdateMember(memberId, memberUpdate);
             return Ok("Update Successfully..");

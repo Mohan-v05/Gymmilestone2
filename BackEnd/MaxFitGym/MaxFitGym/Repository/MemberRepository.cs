@@ -21,7 +21,7 @@ namespace MaxFitGym.Repository
         }
 
 
-        public async Task<ICollection<MemberResponseDTO>> GetAllMembers()
+        public  ICollection<MemberResponseDTO> GetAllMembers()
         {
             var MemberList = new List<MemberResponseDTO>();
 

@@ -24,14 +24,21 @@ namespace MaxFitGym.Controllers
         }
 
         [HttpPost("Add-Enrollment")]
-        public IActionResult AddEnrollment([FromForm] EnrollmentRequestDTO enrollmentRequestDTO)
+        public IActionResult AddEnrollment( EnrollReqDTO enrollReqDTO)
         {
-            _enrollmentRepository.AddEnrollment(enrollmentRequestDTO);
-            return Ok(enrollmentRequestDTO);
+            try
+            {
+                var data = _enrollmentRepository.AddEnrollment(enrollReqDTO);
+                return Ok(data);
+            }
+            catch (Exception ex) {
+                return BadRequest(ex.Message);
+            }
+       
         }
 
         [HttpGet("Get-All-Enrollment")]
-        public async Task<IActionResult> GetAllEnrollments()
+        public IActionResult GetAllEnrollments()
         {
             var EnrollList = _enrollmentRepository.GetAllEnrollments();
             return Ok(EnrollList);
@@ -75,5 +82,7 @@ namespace MaxFitGym.Controllers
             }
             return Ok(entrolledProgramsResponses);
         }
+
+      
     }
 }

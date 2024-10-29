@@ -20,14 +20,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 throw new Error('Network response was not ok');
             }
             const data = await response.json();
-            console.log('Fetched data:', data); // Log the fetched data
-            return data;
+            renderTable(data);
+            console.log(data);
         } catch (error) {
             console.error('There was a problem with the fetch operation:', error);
             return [];
         }
     }
-
+    fetchUserData()
     // Function to format date to YYYY-MM-DD
     function formatDate(date) {
         const dateObj = new Date(date);
@@ -66,10 +66,13 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        data.forEach(user => {
-            const paymentType = user.monthlyFees ? 'Monthly' : user.annualFees ? 'Annual' : 'N/A';
-            const paidDate = user.date ? formatDate(user.date) : 'N/A';
-            const validTill = paidDate !== 'N/A' ? calculateValidTill(user.date, paymentType) : 'N/A';
+        data.forEach(async user => {
+            tableBody.innerHTML = '';
+            console.log(user);
+            const res = await fetch(`http://localhost:5297/api/Payment/Get-Payment-By-ID/${user.id}`);
+            const paymentHistory = await res.json();
+
+            const validTill = (calculateValidTill(paymentHistory.paidDate, user.membershiptype));
 
             const row = document.createElement('tr');
 
@@ -77,14 +80,12 @@ document.addEventListener('DOMContentLoaded', function () {
             const notifyButtonDisplay = isPayButtonRed ? 'inline-block' : 'none';
 
             row.innerHTML = `
-                <td>${user.gymId}</td>
-                <td>${user.name}</td>
-                <td>${user.nic}</td>
-                <td>${user.phone}</td>
-                <td>${user.training.join(', ')}</td>
-                <td>${paymentType}</td>
-                <td>${user.monthlyFees || user.annualFees || 'N/A'}</td>
-                <td>${paidDate}</td>
+                <td>${paymentHistory.id}</td>
+                <td>${user.id}</td>
+                <td>${user.firstName + user.lastName}</td>
+                <td>${user.membershiptype}</td>
+                <td>${user.fee}</td>
+                <td>${paymentHistory.paidDate}</td>
                 <td>${validTill}</td>
                 <td>
                     <button class="pays" data-id="${user.gymId}" style="background-color: ${isPayButtonRed ? 'red' : '#00FF00'};">Pay</button>
@@ -95,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
             tableBody.appendChild(row);
         });
 
-        attachEventListeners();
+        //attachEventListeners();
     }
 
     // Attach event listeners to pay and notify buttons
@@ -156,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function () {
     async function handleNotify(event) {
         const gymId = event.target.dataset.id;
         const allUsersData = await fetchUserData();
-        
+
         const user = allUsersData.find(u => u.gymId == gymId);
 
         if (user) {
@@ -190,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function () {
     (async () => {
         const data = await fetchUserData();
         renderTable(data);
-    })();
+    })
 });
 
 // Search function

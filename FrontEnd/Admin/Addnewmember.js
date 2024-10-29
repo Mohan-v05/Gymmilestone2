@@ -8,11 +8,14 @@ document.addEventListener('DOMContentLoaded', function () {
     const addNewMember_url = "http://localhost:5297/api/Member/Add-Member";
     const viewAllPrograms_url = "http://localhost:5297/api/Program/Get-All-Programs";
     const getProgrmById_url = "http://localhost:5297/api/Program/Get-Progr-By-ID";
-    
+    const addEntrollments_url = "http://localhost:5297/api/Entrollment/Add-Enrollment";
+
+    const paymentUrl = 'http://localhost:5297/api/Payment/Add-Payment';
+
     let programs = [];
 
-     // Load programs on page load
-     loadPrograms();
+    // Load programs on page load
+    loadPrograms();
 
     // Load programs from the backend
     async function loadPrograms() {
@@ -24,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             programs = await response.json();
             trainingOptionsContainer.innerHTML = ''; // Clear existing options
-            console.log(programs);
+            // console.log(programs);
 
             // Add checkboxes for each program
             programs.forEach(program => {
@@ -51,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-   
+
 
     // Calculate total fees based on selected programs
     async function calculateFees() {
@@ -63,13 +66,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
         for (let checkbox of selectedTrainings) {
             const programId = checkbox.value;
-            console.log(programId);
+            // console.log(programId);
 
             try {
                 const response = await fetch(`${getProgrmById_url}/${programId}`);
                 if (response.ok) {
                     const program = await response.json();
-                    console.log(program);
+                    // console.log(program);
                     totalFees += parseInt(program.totalFee, 10);  // Add program fee
                 } else {
                     console.error(`Failed to fetch program data for ID: ${programId}`);
@@ -108,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const initialfee = initialfeeCheckbox.checked;
         const fees = feesInput.value;
         const address = document.getElementById('address').value;
-     
+
 
         const memberData = {
             Nic: nic,
@@ -123,76 +126,73 @@ document.addEventListener('DOMContentLoaded', function () {
             Gender: gender,
             Height: height,
             Weight: weight,
-            CreationDate:  new Date().toISOString().slice(0, 10),
+            CreationDate: new Date().toISOString().substring(0,10),
             is_initalfeePaid: initialfee,
             Membershiptype: subscription ? 'Annual' : 'Monthly',
             Fee: fees,
-                 
+
         };
        
-          
-          // Convert to JSON for API request
-          const jsonData = JSON.stringify(memberData);
-          
-
-
-
-        console.log(jsonData);
-
         try {
+            // Send member data to the backend
             const response = await fetch(addNewMember_url, {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(memberData)
             });
-            console.log(memberData);
+
             if (!response.ok) {
                 throw new Error('Registration failed');
             }
-            // Get the newly created member ID from the response (assuming the backend returns it)
-            const memberResponse = await response.json();
-            const memberId = memberResponse.Id;
-            console.log(memberResponse);
-            console.log(memberId);
-    
-        //     // Now register the member's selected programs
-        //     const enrollmentsData = selectedTrainings.map(training => ({
-        //         MemberID: memberId,
-        //         ProgramID: training // assuming training contains the program ID
-        //     }));
-    
-        //     const enrollmentsResponse = await fetch(addEnrollments_url, {
-        //         method: 'POST',
-        //         headers: {
-        //             'Content-Type': 'application/json'
-        //         },
-        //         body: JSON.stringify(enrollmentsData)
-        //     });
-    
-        //     if (!enrollmentsResponse.ok) {
-        //         throw new Error('Program enrollment failed');
-        //     }
-    
-        //     alert('Registration and program enrollment successful!');
-        //     form.reset();
-        //     calculateFees(); // Reset fees to initial state
-    
-        //     // Redirect to Member Management page
-        //     window.location.href = 'MemberManagement.html';
-        // } catch (error) {
-        //     console.error('Error during registration:', error);
-        //     alert('Registration failed. Please try again.');
-        // }
-     }
-     finally{
-        console.log("end point")
-     }
-    });
-     
 
-    
+            const memberResponse = await response.json();
+            const memberId = memberResponse.id;
+
+            const enrollmentsData = {
+                memberId: memberId,
+                programId: selectedTrainings
+            };
+            console.log("Enrollments data:", enrollmentsData);
+
+            const enrollmentsResponse = await fetch(addEntrollments_url, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(enrollmentsData)
+            });
+            console.log(enrollmentsResponse);
+
+            if (!enrollmentsResponse.ok) {
+                throw new Error('Program enrollment failed');
+            }
+            var isoDate = new Date().toISOString().substring(0,10);
+            const paymentData = {
+                memberId: memberId,
+                paidDate: isoDate,
+                amount: Number(fees)
+            };
+            console.log(paymentData)
+            const paymentsResponce = await fetch(paymentUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(paymentData)
+            });
+            console.log(paymentsResponce);
+
+            if (!paymentsResponce.ok) {
+                throw new Error('Program enrollment failed');
+            }
+
+            alert('Registration and program enrollment successful!');
+            form.reset();
+            feesInput.value = ""; // Reset fees input manually if calculateFees() is not triggered
+
+            // Redirect to Member Management page
+            window.location.href = 'MemberManagement.html';
+        } catch (error) {
+            console.error('Error during registration or enrollment:', error);
+            alert('Registration failed. Please try again.');
+        }
+    });
 
     // Go home button
     document.getElementById('goHome').addEventListener('click', function () {

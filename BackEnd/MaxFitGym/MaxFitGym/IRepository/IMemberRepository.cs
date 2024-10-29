@@ -5,7 +5,7 @@ namespace MaxFitGym.IRepository
 {
     public interface IMemberRepository
     {
-        Task<ICollection<MemberResponseDTO>> GetAllMembers();
+        ICollection <MemberResponseDTO> GetAllMembers();
         MemberResponseDTO AddMember(MemberRegisterRequestDTO memberRegister);
         void DeleteMember(int memberId);
         void UpdateMember(int memberId, MemberUpdateRequestDTO memberUpdate);

@@ -6,7 +6,7 @@ namespace MaxFitGym.IRepository
     public interface IPaymentRepository
     {
         PaymentResponseDTO AddPayment(PaymentRequestDTO paymentRequestDTO);
-        Task<ICollection<PaymentResponseDTO>> GetAllPayments();
+        ICollection<PaymentResponseDTO> GetAllPayments();
 
         PaymentResponseDTO GetPaymentsByMemberId(Int64 memberId);
     }

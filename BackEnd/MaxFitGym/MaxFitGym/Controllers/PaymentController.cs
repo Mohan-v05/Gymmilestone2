@@ -20,7 +20,7 @@ namespace MaxFitGym.Controllers
         }
 
         [HttpPost("Add-Payment")]
-        public IActionResult AddPayment([FromForm] PaymentRequestDTO paymentRequestDTO)
+        public IActionResult AddPayment( PaymentRequestDTO paymentRequestDTO)
         {
             var data = _paymentRepository.AddPayment(paymentRequestDTO);
             return Ok(data);
@@ -28,7 +28,7 @@ namespace MaxFitGym.Controllers
 
 
         [HttpGet("Get-All-Payment")]
-        public async Task<IActionResult> GetAllPayments()
+        public IActionResult GetAllPayments()
         {
             var PaymentList = _paymentRepository.GetAllPayments();
             return Ok(PaymentList);

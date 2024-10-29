@@ -45,7 +45,7 @@ namespace MaxFitGym.Repository
             }
         }
 
-        public async Task<ICollection<PaymentResponseDTO>> GetAllPayments()
+        public ICollection<PaymentResponseDTO> GetAllPayments()
         {
             var PaymentList = new List<PaymentResponseDTO>();
 
